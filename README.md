@@ -1,6 +1,6 @@
 # LoopKey Integration Sample Project
 
-![Documentation Coverage Badge](https://loopce.github.io/loopkey-sample-ios/badge.svg)
+[![Documentation Coverage Badge](https://loopce.github.io/loopkey-sample-ios/badge.svg)](https://loopce.github.io/loopkey-sample-ios/)
 
 This project is a sample of how to integrate the LoopKey BLE communication technology with your iOS project.
 
@@ -21,7 +21,7 @@ If you don't have the LoopKey libraries, contact us at loopkey@loopkey.com.br fo
 
 ## Documentation
 
-LoopKey library reference documentation [is available here](https://loopce.github.io/loopkey-sample-ios).
+LoopKey library reference documentation [is available here](https://loopce.github.io/loopkey-sample-ios/).
 
 ## License
 
