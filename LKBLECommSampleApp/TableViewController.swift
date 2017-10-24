@@ -72,10 +72,10 @@ class TableViewController: UITableViewController, LKDiscoveryProtocol
         // we may ignore since it won't be used by our communication method.
         let comm = LKDeviceCommunicator(device: device, user: nil)
 
-        // Before communicating with the device we must first retrieve it's roll count parameter so we can send it to
-        // the LoopKey server for authentication. There are two ways of retrieving the roll count. We can either use
-        // the value transmitted during bluetooth broadcast, which is faster but may be unreliable in scenarios when
-        // multiple operations are being performed in a short period of time. This is accomplished by calling the
+        // Before communicating with the device we must first retrieve its roll count parameter so we can send it to
+        // the LoopKey server for authentication. There are two ways of retrieving the roll count. The first option is
+        // to use the value transmitted during bluetooth broadcast, which is faster but may be unreliable in scenarios
+        // when multiple operations are being performed in a short period of time. This is accomplished by calling the
         // `getRollCount()` method without a callback method.
         //
         // This alternative may be used to speed up server authentication. While with the immediate return value you
@@ -84,14 +84,14 @@ class TableViewController: UITableViewController, LKDiscoveryProtocol
         // if the values differ, you should request another authentication from the server with the correct roll count
         // value.
         var rollCount = comm.getRollCount(nil)
-        print("Roll count on first try (advertisement): ", rollCount ?? "(nil)")
+        print("Roll count on first try (advertisement): ", rollCount?.hexEncodedString() ?? "(nil)")
 
         // Other alternative is calling the same method but with a callback function. This will make the mobile device
-        // connect to the LoopKey device and get it's roll count. Even when a callback is provided, the method
+        // connect to the LoopKey device and get its roll count. Even when a callback is provided, the method
         // immediately returns the roll count value it has from the bluetooth broadcast.
         _ = comm.getRollCount { (retrievedRCOptional) in
             if let rc = retrievedRCOptional {
-                print("Roll count on second try (read operation): \(rc)")
+                print("Roll count on second try (read operation): \(rc.hexEncodedString())")
                 if rollCount != rc {
                     rollCount = rc // Recalculate any authorizations obtained from LoopKey servers.
                 }
@@ -171,3 +171,13 @@ class TableViewController: UITableViewController, LKDiscoveryProtocol
         return 60.0
     }
 }
+
+/// Convenience extension to properly print a `Data` object as an hexadecimal string.
+extension Data
+{
+    func hexEncodedString() -> String
+    {
+        return map { String(format: "%02hhx", $0) }.joined()
+    }
+}
+
