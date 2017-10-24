@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LKDeviceCommunicator Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/LKDeviceCommunicator" class="dashAnchor"></a>
+    <a title="LKDeviceCommunicator Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (53% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LKDeviceCommunicator Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LKBLEInteractor.html">LKBLEInteractor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommDevice.html">LKCommDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommSchedule.html">LKCommSchedule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommUser.html">LKCommUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommunicationManager.html">LKCommunicationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceCommunicator.html">LKDeviceCommunicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceCommunicator/LKMessagesTypes.html">– LKMessagesTypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceError.html">LKDeviceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:@M@LKBLECommunication@objc(cs)LKDeviceRawResponse">LKDeviceRawResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKServerNetworking.html">LKServerNetworking</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:18LKBLECommunication12LKUtilsSwiftC">LKUtilsSwift</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceMode.html">LKCommDeviceMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceType.html">LKCommDeviceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommState.html">LKCommState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceErrorDescriptions.html">LKDeviceErrorDescriptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceErrorType.html">LKDeviceErrorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceResponseType.html">LKDeviceResponseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServer.html">LKServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServerError.html">LKServerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServerResponse.html">LKServerResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSData.html">NSData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LKDeviceCommunicator</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKDeviceCommunicator</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>This class is responsible for managing a LKDevice communication. It is used for sending some type of message to any
+LKDevice. An instance of this class should be generated for the device that is going to be communicated with
+once a new communication is required.</p>
+
+<p>The steps to use this instace are:</p>
+
+<ol>
+<li>Initialize the instance with the device that should communicated, a user responsible for the communication and an
+delegate who implements the LKDeviceCommunicatorProtocol.</li>
+<li>Call communicateWithType everytime a new communication is going to be made with the device.</li>
+</ol>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO"></a>
+                    <a name="//apple_ref/swift/Enum/LKMessagesTypes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO">LKMessagesTypes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enum with the types of communications that are possible.</p>
+
+<ul>
+<li>UNLOCK: Unlock door type of communication.</li>
+<li>LOCK:   Lock door type of communication.</li>
+<li>EDIT:   Edit door type of communication.</li>
+<li>CONF:   Initial configuration type of communication.</li>
+<li>RESET:  Reset door type of communication</li>
+</ul>
+
+                        <a href="../Classes/LKDeviceCommunicator/LKMessagesTypes.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)initWithDevice:user:"></a>
+                    <a name="//apple_ref/swift/Method/init(device:user:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)initWithDevice:user:">init(device:user:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializer for the device communicator that is responsible for managing a connection with a LoopKey.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKCommDevice.html">LKCommDevice</a></span><span class="p">,</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKCommUser.html">LKCommUser</a></span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>device</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A LKDevice object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>user</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional LKUser object (Required for CONF and RESET)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The device communicator</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)communicateWithType:callback:"></a>
+                    <a name="//apple_ref/swift/Method/communicateWithType(_:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)communicateWithType:callback:">communicateWithType(_:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends specific message to device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicateWithType</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKDeviceCommunicator/LKMessagesTypes.html">LKMessagesTypes</a></span><span class="p">,</span>
+                                    <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a></span><span class="p">?,</span> <span class="kt"><a href="../Classes/LKDeviceError.html">LKDeviceError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message to send.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback that will be called upon completion. If successful, the first argument will have the
+device response. Otherwise, the second argument will have the error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if message will be sent. <code>false</code> otherwise, in which case the callback won&rsquo;t be called.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)communicate:withCallback:"></a>
+                    <a name="//apple_ref/swift/Method/communicate(_:withCallback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)communicate:withCallback:">communicate(_:withCallback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Send arbitrary message to device.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    If this function returns <code>false</code>, the callback won&rsquo;t be called.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicate</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">withCallback</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message to be sent.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A callback that will be called with the response from the device.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if message is going to be sent, <code>false</code> otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)communicateWithData:callback:"></a>
+                    <a name="//apple_ref/swift/Method/communicateWithData(_:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)communicateWithData:callback:">communicateWithData(_:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Send arbitrary message to device and process the device&rsquo;s response.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    If this function returns <code>false</code>, the callback won&rsquo;t be called.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicateWithData</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+                                    <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a></span><span class="p">?,</span> <span class="kt"><a href="../Classes/LKDeviceError.html">LKDeviceError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message to be sent.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A callback that will be called with the response from the device.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if message is going to be sent, <code>false</code> otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)getRollCount:"></a>
+                    <a name="//apple_ref/swift/Method/getRollCount(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)getRollCount:">getRollCount(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves roll count data from device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRollCount</span><span class="p">(</span><span class="n">_</span> <span class="nv">callback</span><span class="p">:</span> <span class="p">((</span><span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback to be executed when roll count data is retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The current roll count data.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)disconnect"></a>
+                    <a name="//apple_ref/swift/Method/disconnect()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)disconnect">disconnect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Disconnect from the current device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">disconnect</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-10-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

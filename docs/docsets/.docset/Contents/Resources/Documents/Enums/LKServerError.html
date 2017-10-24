@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LKServerError Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/LKServerError" class="dashAnchor"></a>
+    <a title="LKServerError Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (53% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LKServerError Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LKBLEInteractor.html">LKBLEInteractor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommDevice.html">LKCommDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommSchedule.html">LKCommSchedule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommUser.html">LKCommUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommunicationManager.html">LKCommunicationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceCommunicator.html">LKDeviceCommunicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceCommunicator/LKMessagesTypes.html">– LKMessagesTypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceError.html">LKDeviceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:@M@LKBLECommunication@objc(cs)LKDeviceRawResponse">LKDeviceRawResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKServerNetworking.html">LKServerNetworking</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:18LKBLECommunication12LKUtilsSwiftC">LKUtilsSwift</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceMode.html">LKCommDeviceMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceType.html">LKCommDeviceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommState.html">LKCommState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceErrorDescriptions.html">LKDeviceErrorDescriptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceErrorType.html">LKDeviceErrorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceResponseType.html">LKDeviceResponseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServer.html">LKServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServerError.html">LKServerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServerResponse.html">LKServerResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSData.html">NSData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LKServerError</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKServerError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                </div>
+              </div>
+            <p>Represents an error returned from the server.</p>
+
+<p>Unless specified otherwise, the <code>String</code> parameter is the description message returned directly from the server.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO12invalidFieldACSS_s10DictionaryVyS2SGSgtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidField" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO12invalidFieldACSS_s10DictionaryVyS2SGSgtcACmF">invalidField</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>101 Invalid field error. One or more fields failed through validation.</p>
+
+<p>A dictionary with specific error messages for each field is provided in the second argument.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">invalidField</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO14duplicateFieldACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/duplicateField" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO14duplicateFieldACSScACmF">duplicateField</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>102 Data integrity violation. A field that must be unique was sent a duplicate value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">duplicateField</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO29invalidFacebookAuthenticationACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidFacebookAuthentication" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO29invalidFacebookAuthenticationACSScACmF">invalidFacebookAuthentication</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>103 Invalid facebook token or unauthorized connection with provided token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">invalidFacebookAuthentication</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO18socialUserNotFoundACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/socialUserNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO18socialUserNotFoundACSScACmF">socialUserNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>105 No LoopKey user with that social login account was found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">socialUserNotFound</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO12doorNotFoundACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/doorNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO12doorNotFoundACSScACmF">doorNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>106 No door was found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">doorNotFound</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO12userNotFoundACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/userNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO12userNotFoundACSScACmF">userNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>107 No user was found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">userNotFound</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO18forbiddenOperationACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/forbiddenOperation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO18forbiddenOperationACSScACmF">forbiddenOperation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>108 User does not have the required authority to perform that operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">forbiddenOperation</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO23permissionAlreadyExistsACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/permissionAlreadyExists" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO23permissionAlreadyExistsACSScACmF">permissionAlreadyExists</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>109 Referenced user already has permission for that door.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">permissionAlreadyExists</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO21permissionDoesntExistACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/permissionDoesntExist" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO21permissionDoesntExistACSScACmF">permissionDoesntExist</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>110 There is no relation between user and door.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">permissionDoesntExist</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO22invalidEmailOrPasswordACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidEmailOrPassword" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO22invalidEmailOrPasswordACSScACmF">invalidEmailOrPassword</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>111 Invalid email or password provided.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">invalidEmailOrPassword</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO26currentPasswordDoesntMatchACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/currentPasswordDoesntMatch" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO26currentPasswordDoesntMatchACSScACmF">currentPasswordDoesntMatch</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>112 Sent password doesn&rsquo;t match the stored one.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">currentPasswordDoesntMatch</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO18sharingDoesntExistACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/sharingDoesntExist" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO18sharingDoesntExistACSScACmF">sharingDoesntExist</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>113 Sharing between given door and user could not be found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">sharingDoesntExist</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO20sharingAlreadyExistsACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/sharingAlreadyExists" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO20sharingAlreadyExistsACSScACmF">sharingAlreadyExists</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>114 Given user already has sharing access to that door.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">sharingAlreadyExists</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO11invalidCodeACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO11invalidCodeACSScACmF">invalidCode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>116 Provided code isn&rsquo;t valid.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">invalidCode</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO17emailNotConfirmedACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/emailNotConfirmed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO17emailNotConfirmedACSScACmF">emailNotConfirmed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>117 Provided email was not confirmed yet.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">emailNotConfirmed</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO30lkDeviceLockedForConfigurationACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/lkDeviceLockedForConfiguration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO30lkDeviceLockedForConfigurationACSScACmF">lkDeviceLockedForConfiguration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>118 LK Device is locked for configuration.</p>
+
+<p>For some reason configuration is blocked for this device. User should take it to the nearest support center.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">lkDeviceLockedForConfiguration</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO16lkDeviceNotFoundACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/lkDeviceNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO16lkDeviceNotFoundACSScACmF">lkDeviceNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>119 LK Device not found. User should contact LoopKey support.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">lkDeviceNotFound</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO14invalidSessionACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidSession" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO14invalidSessionACSScACmF">invalidSession</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>123 The app is trying to use an old or invalid session token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">invalidSession</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO17noSessionProvidedACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/noSessionProvided" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO17noSessionProvidedACSScACmF">noSessionProvided</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>124 The app is trying to consume a service without sending a session token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">noSessionProvided</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO19lkMsgFailedCrcCheckACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/lkMsgFailedCrcCheck" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO19lkMsgFailedCrcCheckACSScACmF">lkMsgFailedCrcCheck</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>125 Message failed the CRC check.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">lkMsgFailedCrcCheck</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO20lkMsgWrongSourceByteACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/lkMsgWrongSourceByte" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO20lkMsgWrongSourceByteACSScACmF">lkMsgWrongSourceByte</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>126 Message has wrong source byte.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">lkMsgWrongSourceByte</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO21lkMsgInvalidSignatureACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/lkMsgInvalidSignature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO21lkMsgInvalidSignatureACSScACmF">lkMsgInvalidSignature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>127 Message signature was invalid.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">lkMsgInvalidSignature</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO23lkDeviceKeyWasOutOfSyncACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/lkDeviceKeyWasOutOfSync" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO23lkDeviceKeyWasOutOfSyncACSScACmF">lkDeviceKeyWasOutOfSync</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>128 Device key was out of sync. Try again.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">lkDeviceKeyWasOutOfSync</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO07genericC0ACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/genericError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO07genericC0ACSScACmF">genericError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>129 Unknown error. Error message might enlighten what happened.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">genericError</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO08internalC0ACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/internalError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO08internalC0ACSScACmF">internalError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>666 Internal server error.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">internalError</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO010connectionC0A2CmF"></a>
+                    <a name="//apple_ref/swift/Element/connectionError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO010connectionC0A2CmF">connectionError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connection error occurred, such as empty response.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">connectionError</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO17serverUnavailableA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/serverUnavailable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO17serverUnavailableA2CmF">serverUnavailable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LoopKey servers are unavailable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">serverUnavailable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO20noInternetConnectionA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/noInternetConnection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO20noInternetConnectionA2CmF">noInternetConnection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When device has no internet connection available.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">noInternetConnection</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication13LKServerErrorO7unknownACSS_SitcACmF"></a>
+                    <a name="//apple_ref/swift/Element/unknown" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO7unknownACSS_SitcACmF">unknown</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unknown error code was returned from server. The code is provided as the second argument.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">unknown</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-10-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

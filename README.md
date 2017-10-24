@@ -1,5 +1,7 @@
 # LoopKey Integration Sample Project
 
+![Documentation Coverage Badge](https://loopce.github.io/loopkey-sample-ios/badge.svg)
+
 This project is a sample of how to integrate the LoopKey BLE communication technology with your iOS project.
 
 ## LoopKey
@@ -16,6 +18,10 @@ Check out the `TableViewController.swift` file for a walkthrough of the integrat
 compile, you'll need to put our frameworks into the Libraries folder.
 
 If you don't have the LoopKey libraries, contact us at loopkey@loopkey.com.br for more information.
+
+## Documentation
+
+LoopKey library reference documentation [is available here](https://loopce.github.io/loopkey-sample-ios).
 
 ## License
 

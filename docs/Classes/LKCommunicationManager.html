@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LKCommunicationManager Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/LKCommunicationManager" class="dashAnchor"></a>
+    <a title="LKCommunicationManager Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (53% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LKCommunicationManager Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LKBLEInteractor.html">LKBLEInteractor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommDevice.html">LKCommDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommSchedule.html">LKCommSchedule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommUser.html">LKCommUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCommunicationManager.html">LKCommunicationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceCommunicator.html">LKDeviceCommunicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceCommunicator/LKMessagesTypes.html">– LKMessagesTypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceError.html">LKDeviceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:@M@LKBLECommunication@objc(cs)LKDeviceRawResponse">LKDeviceRawResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKServerNetworking.html">LKServerNetworking</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:18LKBLECommunication12LKUtilsSwiftC">LKUtilsSwift</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceMode.html">LKCommDeviceMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceType.html">LKCommDeviceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommState.html">LKCommState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceErrorDescriptions.html">LKDeviceErrorDescriptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceErrorType.html">LKDeviceErrorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKDeviceResponseType.html">LKDeviceResponseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServer.html">LKServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServerError.html">LKServerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKServerResponse.html">LKServerResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSData.html">NSData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LKCommunicationManager</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommunicationManager</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>This class is the main communication manager from the device with a LoopKey. It can be used for discovering a device
+ or to send a messsage. This is an abstract class and a concrete implementation should be provided according to the
+ communication method used to send messages to the LK Device (e.g. BLE).</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    This class should never be instantiated. It must be subclassed.
+
+</div>
+
+<p>Using the service for discovering a device:</p>
+
+<ol>
+<li>The class has to implement the LKDiscoveryProtocol for listening to response events.</li>
+<li>The class can subscribeForNotifications to discover when has changed its state from reachable to unreachable and
+vice-versa. In that case that class has to unsubscribeForNotifications when it wants to stop listenning to these
+events.</li>
+<li>The class can get immediately the current list of visible devices by calling getVisibleDevices.</li>
+</ol>
+
+<p>Using the service for connecting with a device:</p>
+
+<ol>
+<li>If a a rollCount is need the user can cal readRollCount first.</li>
+<li>To send a message the user can call send.</li>
+</ol>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)startScanning"></a>
+                    <a name="//apple_ref/swift/Method/startScanning()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)startScanning">startScanning()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts scanning for devices.</p>
+
+<p>The communication manager should automatically start scanning. However, this method may be called to
+restart scanning in case it stops (e.g. App goes to background and stops scanning).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">startScanning</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)stopScanning"></a>
+                    <a name="//apple_ref/swift/Method/stopScanning()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)stopScanning">stopScanning()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stops scanning for devices.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">stopScanning</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)isDeviceBusyWithSerial:"></a>
+                    <a name="//apple_ref/swift/Method/isDeviceBusy(serial:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)isDeviceBusyWithSerial:">isDeviceBusy(serial:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if device is busy communicating.</p>
+
+<p>User should always check before sending a message. If this method returns true, sending a message won&rsquo;t work.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isDeviceBusy</span><span class="p">(</span><span class="nv">serial</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serial</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The serial code of the device to check.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if device is busy. <code>false</code> otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)disconnectFromDeviceWithSerial:"></a>
+                    <a name="//apple_ref/swift/Method/disconnect(fromDeviceWithSerial:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)disconnectFromDeviceWithSerial:">disconnect(fromDeviceWithSerial:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Disconnect from device with provided serial code.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">disconnect</span><span class="p">(</span><span class="nv">fromDeviceWithSerial</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromDeviceWithSerial</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The serial code of the device to disconnect from.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)getState"></a>
+                    <a name="//apple_ref/swift/Method/getState()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)getState">getState()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used to determine the current state of the communication manager.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/LKCommState.html">LKCommState</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The current state of the communication manager.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)subscribeForNotifications:"></a>
+                    <a name="//apple_ref/swift/Method/subscribeForNotifications(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)subscribeForNotifications:">subscribeForNotifications(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method used for adding an observer to the communicator</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">subscribeForNotifications</span><span class="p">(</span><span class="n">_</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Observer obj that wants to be notified</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)unsubscribeForNotifications:"></a>
+                    <a name="//apple_ref/swift/Method/unsubscribeForNotifications(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)unsubscribeForNotifications:">unsubscribeForNotifications(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method used for removing an observer from the communicator</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unsubscribeForNotifications</span><span class="p">(</span><span class="n">_</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Observer obj that wants to stop being notified</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)getVisibleDevices:"></a>
+                    <a name="//apple_ref/swift/Method/getVisibleDevices(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommunicationManager(im)getVisibleDevices:">getVisibleDevices(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method used for getting the devices that are visible</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getVisibleDevices</span><span class="p">(</span><span class="n">_</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Observer obj that wants the serials values</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-10-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

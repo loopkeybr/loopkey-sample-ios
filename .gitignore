@@ -29,8 +29,6 @@ fastlane/*.md
 *.cer
 *.mobileProvision
 
-docs/
-
 ### Xcode ###
 build/
 *.pbxuser

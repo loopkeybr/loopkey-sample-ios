@@ -1,0 +1,586 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceCommunicator.swift",
+      "line": 68,
+      "symbol": "LKDeviceCommunicator.LKMessagesTypes.Unlock",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceCommunicator.swift",
+      "line": 69,
+      "symbol": "LKDeviceCommunicator.LKMessagesTypes.Lock",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceCommunicator.swift",
+      "line": 70,
+      "symbol": "LKDeviceCommunicator.LKMessagesTypes.Edit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceCommunicator.swift",
+      "line": 71,
+      "symbol": "LKDeviceCommunicator.LKMessagesTypes.Reset",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceCommunicator.swift",
+      "line": 72,
+      "symbol": "LKDeviceCommunicator.LKMessagesTypes.LogRequest",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceCommunicator.swift",
+      "line": 73,
+      "symbol": "LKDeviceCommunicator.LKMessagesTypes.Schedule",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceCommunicator.swift",
+      "line": 74,
+      "symbol": "LKDeviceCommunicator.LKMessagesTypes.ScheduleStop",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceCommunicator.swift",
+      "line": 75,
+      "symbol": "LKDeviceCommunicator.LKMessagesTypes.ScheduleCheck",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 16,
+      "symbol": "LKDeviceErrorType.ESIG",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 17,
+      "symbol": "LKDeviceErrorType.ESYN",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 18,
+      "symbol": "LKDeviceErrorType.EPER",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 19,
+      "symbol": "LKDeviceErrorType.EALC",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 20,
+      "symbol": "LKDeviceErrorType.ETMO",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 21,
+      "symbol": "LKDeviceErrorType.EMSL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 22,
+      "symbol": "LKDeviceErrorType.EMSS",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 23,
+      "symbol": "LKDeviceErrorType.EUNC",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 24,
+      "symbol": "LKDeviceErrorType.ECKS",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 25,
+      "symbol": "LKDeviceErrorType.ECMD",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 26,
+      "symbol": "LKDeviceErrorType.EMOD",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 27,
+      "symbol": "LKDeviceErrorType.EDUR",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 28,
+      "symbol": "LKDeviceErrorType.EALL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 29,
+      "symbol": "LKDeviceErrorType.ENOL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 30,
+      "symbol": "LKDeviceErrorType.ELOC",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 31,
+      "symbol": "LKDeviceErrorType.ELOS",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 32,
+      "symbol": "LKDeviceErrorType.ELOB",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 33,
+      "symbol": "LKDeviceErrorType.EDOP",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 34,
+      "symbol": "LKDeviceErrorType.ESTI",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 35,
+      "symbol": "LKDeviceErrorType.ESRU",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 36,
+      "symbol": "LKDeviceErrorType.ESST",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 37,
+      "symbol": "LKDeviceErrorType.notString",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 38,
+      "symbol": "LKDeviceErrorType.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 39,
+      "symbol": "LKDeviceErrorType.failedCrcCheck",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 40,
+      "symbol": "LKDeviceErrorType.unsupportedResponseKind",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 41,
+      "symbol": "LKDeviceErrorType.invalidResponseSize",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 42,
+      "symbol": "LKDeviceErrorType.failedAuthentication",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 43,
+      "symbol": "LKDeviceErrorType.failedToSign",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 44,
+      "symbol": "LKDeviceErrorType.failedToSignOnline",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 45,
+      "symbol": "LKDeviceErrorType.unauthorizedOperation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 46,
+      "symbol": "LKDeviceErrorType.emptyResponse",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 47,
+      "symbol": "LKDeviceErrorType.timeout",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 50,
+      "symbol": "LKDeviceErrorDescriptions",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 52,
+      "symbol": "LKDeviceErrorDescriptions.noInternetConnection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 53,
+      "symbol": "LKDeviceErrorDescriptions.lkServerError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 54,
+      "symbol": "LKDeviceErrorDescriptions.unauthorizedOperation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 55,
+      "symbol": "LKDeviceErrorDescriptions.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 56,
+      "symbol": "LKDeviceErrorDescriptions.alreadyOpen",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Communication/LKDeviceResponseParser.swift",
+      "line": 86,
+      "symbol": "LKDeviceError.getErrorDescription()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 15,
+      "symbol": "LKCommDeviceMode.normallyClosed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 16,
+      "symbol": "LKCommDeviceMode.normallyOpen",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 17,
+      "symbol": "LKCommDeviceMode.latch",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 26,
+      "symbol": "LKCommDeviceType.single",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 27,
+      "symbol": "LKCommDeviceType.multiple",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 46,
+      "symbol": "LKCommDevice.latitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 47,
+      "symbol": "LKCommDevice.longitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 48,
+      "symbol": "LKCommDevice.key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 49,
+      "symbol": "LKCommDevice.adminKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 50,
+      "symbol": "LKCommDevice.schedule",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 51,
+      "symbol": "LKCommDevice.mode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 52,
+      "symbol": "LKCommDevice.unlockTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 53,
+      "symbol": "LKCommDevice.disableTouch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 54,
+      "symbol": "LKCommDevice.invertSensor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 55,
+      "symbol": "LKCommDevice.kind",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 56,
+      "symbol": "LKCommDevice.commandData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommDevice.swift",
+      "line": 60,
+      "symbol": "LKCommDevice.serial",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommUser.swift",
+      "line": 11,
+      "symbol": "LKCommUser",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommUser.swift",
+      "line": 13,
+      "symbol": "LKCommUser.init(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKCommUser.swift",
+      "line": 18,
+      "symbol": "LKCommUser.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 11,
+      "symbol": "LKServer",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 13,
+      "symbol": "LKServer.hml",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 14,
+      "symbol": "LKServer.prod",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 15,
+      "symbol": "LKServer.custom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 45,
+      "symbol": "LKServerResponse",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 47,
+      "symbol": "LKServerResponse.success",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 48,
+      "symbol": "LKServerResponse.failure",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 57,
+      "symbol": "LKServerNetworking",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 59,
+      "symbol": "LKServerNetworking.shared",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 137,
+      "symbol": "LKServerNetworking.set(endpoint:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Data/LKServerNetworking.swift",
+      "line": 142,
+      "symbol": "LKServerNetworking.set(authorization:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Interface/LKCommunicationManager.swift",
+      "line": 17,
+      "symbol": "LKCommState.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Interface/LKCommunicationManager.swift",
+      "line": 18,
+      "symbol": "LKCommState.enabled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Interface/LKCommunicationManager.swift",
+      "line": 19,
+      "symbol": "LKCommState.disabled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Interface/LKCommunicationManager.swift",
+      "line": 20,
+      "symbol": "LKCommState.unsupported",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication/LKBLECommunication/Util/LKBLEUtils.swift",
+      "line": 298,
+      "symbol": "String.isValidEmail()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/sandoval/Loop/code/indigo-ios/Libraries/LKBLECommunication"
+}
