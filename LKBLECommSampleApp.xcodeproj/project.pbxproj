@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		356CE4B41FA4D5EA00D3F402 /* OfflineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356CE4B31FA4D5EA00D3F402 /* OfflineTableViewController.swift */; };
 		357045991DBD59A0008B6688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357045981DBD59A0008B6688 /* AppDelegate.swift */; };
 		3570459E1DBD59A0008B6688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3570459C1DBD59A0008B6688 /* Main.storyboard */; };
 		357045A01DBD59A0008B6688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3570459F1DBD59A0008B6688 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		356CE4B31FA4D5EA00D3F402 /* OfflineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineTableViewController.swift; sourceTree = "<group>"; };
 		357045951DBD59A0008B6688 /* LKBLECommSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LKBLECommSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		357045981DBD59A0008B6688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3570459D1DBD59A0008B6688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				357045A11DBD59A0008B6688 /* LaunchScreen.storyboard */,
 				357045A41DBD59A0008B6688 /* Info.plist */,
 				35BDB62B1DBFE080009E4F51 /* Base32.swift */,
+				356CE4B31FA4D5EA00D3F402 /* OfflineTableViewController.swift */,
 			);
 			path = LKBLECommSampleApp;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				35BDB62A1DBFDDE1009E4F51 /* TableViewController.swift in Sources */,
 				357045991DBD59A0008B6688 /* AppDelegate.swift in Sources */,
+				356CE4B41FA4D5EA00D3F402 /* OfflineTableViewController.swift in Sources */,
 				35BDB62C1DBFE080009E4F51 /* Base32.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
