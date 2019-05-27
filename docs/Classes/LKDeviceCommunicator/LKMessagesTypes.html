@@ -14,7 +14,7 @@
     <a title="LKMessagesTypes Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../../index.html"> Docs</a> (53% documented)</p>
+        <p><a href="../../index.html"> Docs</a> (30% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -46,6 +46,12 @@
                 <a href="../../Classes/LKCommunicationManager.html">LKCommunicationManager</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Classes/LKCustomCommandConfiguration.html">LKCustomCommandConfiguration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LKCustomCommandType.html">LKCustomCommandType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Classes/LKDeviceCommunicator.html">LKDeviceCommunicator</a>
               </li>
               <li class="nav-group-task">
@@ -61,6 +67,24 @@
                 <a href="../../Classes/LKDeviceResponse.html">LKDeviceResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Classes/LKPermissionSettings.html">LKPermissionSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LKPermissionTime.html">LKPermissionTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LKRemoteUnlocker.html">LKRemoteUnlocker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LKRemoteUnlocker/RemoteUnlockResponse.html">– RemoteUnlockResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LKRemoteUnlocker/RemoteUnlockError.html">– RemoteUnlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LKSerial.html">LKSerial</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Classes/LKServerNetworking.html">LKServerNetworking</a>
               </li>
               <li class="nav-group-task">
@@ -72,7 +96,13 @@
             <a href="../../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../../Enums/LKCommCommandKind.html">LKCommCommandKind</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Enums/LKCommDeviceMode.html">LKCommDeviceMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/LKCommDeviceReaderMode.html">LKCommDeviceReaderMode</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Enums/LKCommDeviceType.html">LKCommDeviceType</a>
@@ -87,16 +117,16 @@
                 <a href="../../Enums/LKDeviceErrorType.html">LKDeviceErrorType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Enums/LKDeviceResponseAttributeKey.html">LKDeviceResponseAttributeKey</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Enums/LKDeviceResponseType.html">LKDeviceResponseType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Enums/LKPermissionFlags.html">LKPermissionFlags</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Enums/LKServer.html">LKServer</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Enums/LKServerError.html">LKServerError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Enums/LKServerResponse.html">LKServerResponse</a>
               </li>
             </ul>
           </li>
@@ -118,6 +148,9 @@
             <a href="../../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../../Protocols/LKBLELoggerProtocol.html">LKBLELoggerProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a>
               </li>
             </ul>
@@ -130,18 +163,23 @@
             <h1>LKMessagesTypes</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                 </div>
               </div>
-            <p>Enum with the types of communications that are possible.</p>
+            <p>Specifies the message types available for communication with the LoopKey Device.</p>
 
 <ul>
-<li>UNLOCK: Unlock door type of communication.</li>
-<li>LOCK:   Lock door type of communication.</li>
-<li>EDIT:   Edit door type of communication.</li>
-<li>CONF:   Initial configuration type of communication.</li>
-<li>RESET:  Reset door type of communication</li>
+<li>Unlock: unlock operation.</li>
+<li>Lock: lock operation.</li>
+<li>Edit: edit operation.</li>
+<li>Reset: reset operation.</li>
+<li>LogRequest: log request operation.</li>
+<li>Schedule: schedule operation.</li>
+<li>ScheduleStop: stop schedule operation.</li>
+<li>ScheduleCheck: check schedule operation.</li>
+<li>Custom: custom operation. Warning: Do not use this with communicateWithType method.</li>
 </ul>
 
           </section>
@@ -151,9 +189,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO6UnlockA2EmF"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO6UnlockyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/Unlock" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO6UnlockA2EmF">Unlock</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO6UnlockyA2EmF">Unlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -168,23 +206,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Unlock</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO4LockA2EmF"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO4LockyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/Lock" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO4LockA2EmF">Lock</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO4LockyA2EmF">Lock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -199,23 +233,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Lock</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO4EditA2EmF"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO4EdityA2EmF"></a>
                     <a name="//apple_ref/swift/Element/Edit" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO4EditA2EmF">Edit</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO4EdityA2EmF">Edit</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -230,23 +260,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Edit</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO5ResetA2EmF"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO5ResetyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/Reset" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO5ResetA2EmF">Reset</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO5ResetyA2EmF">Reset</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -261,23 +287,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Reset</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO10LogRequestA2EmF"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO10LogRequestyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/LogRequest" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO10LogRequestA2EmF">LogRequest</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO10LogRequestyA2EmF">LogRequest</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -292,23 +314,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LogRequest</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO8ScheduleA2EmF"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO8ScheduleyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/Schedule" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO8ScheduleA2EmF">Schedule</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO8ScheduleyA2EmF">Schedule</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -323,23 +341,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Schedule</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO12ScheduleStopA2EmF"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO12ScheduleStopyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/ScheduleStop" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO12ScheduleStopA2EmF">ScheduleStop</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO12ScheduleStopyA2EmF">ScheduleStop</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -354,23 +368,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">ScheduleStop</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO13ScheduleCheckA2EmF"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO13ScheduleCheckyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/ScheduleCheck" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO13ScheduleCheckA2EmF">ScheduleCheck</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO13ScheduleCheckyA2EmF">ScheduleCheck</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -385,7 +395,223 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">ScheduleCheck</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO6CustomyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/Custom" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO6CustomyA2EmF">Custom</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Custom</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO7RawConfyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/RawConf" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO7RawConfyA2EmF">RawConf</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">RawConf</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO5ReKeyyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/ReKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO5ReKeyyA2EmF">ReKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">ReKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO3DFUyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/DFU" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO3DFUyA2EmF">DFU</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DFU</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO9PublicDFUyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/PublicDFU" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO9PublicDFUyA2EmF">PublicDFU</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">PublicDFU</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO11ValidateKeyyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/ValidateKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO11ValidateKeyyA2EmF">ValidateKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">ValidateKey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO12AddSmartCardyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/AddSmartCard" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO12AddSmartCardyA2EmF">AddSmartCard</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">AddSmartCard</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO15DeleteSmartCardyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/DeleteSmartCard" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO15DeleteSmartCardyA2EmF">DeleteSmartCard</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DeleteSmartCard</span></code></pre>
 
                         </div>
                       </div>
@@ -397,8 +623,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-10-24)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

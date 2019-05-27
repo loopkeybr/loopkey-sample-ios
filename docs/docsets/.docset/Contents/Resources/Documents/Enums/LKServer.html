@@ -14,7 +14,7 @@
     <a title="LKServer Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (53% documented)</p>
+        <p><a href="../index.html"> Docs</a> (30% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -46,6 +46,12 @@
                 <a href="../Classes/LKCommunicationManager.html">LKCommunicationManager</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/LKCustomCommandConfiguration.html">LKCustomCommandConfiguration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCustomCommandType.html">LKCustomCommandType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/LKDeviceCommunicator.html">LKDeviceCommunicator</a>
               </li>
               <li class="nav-group-task">
@@ -61,6 +67,24 @@
                 <a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/LKPermissionSettings.html">LKPermissionSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKPermissionTime.html">LKPermissionTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker.html">LKRemoteUnlocker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker/RemoteUnlockResponse.html">– RemoteUnlockResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker/RemoteUnlockError.html">– RemoteUnlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSerial.html">LKSerial</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/LKServerNetworking.html">LKServerNetworking</a>
               </li>
               <li class="nav-group-task">
@@ -72,7 +96,13 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/LKCommCommandKind.html">LKCommCommandKind</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKCommDeviceMode.html">LKCommDeviceMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceReaderMode.html">LKCommDeviceReaderMode</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/LKCommDeviceType.html">LKCommDeviceType</a>
@@ -87,16 +117,16 @@
                 <a href="../Enums/LKDeviceErrorType.html">LKDeviceErrorType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/LKDeviceResponseAttributeKey.html">LKDeviceResponseAttributeKey</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKDeviceResponseType.html">LKDeviceResponseType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/LKPermissionFlags.html">LKPermissionFlags</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKServer.html">LKServer</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/LKServerError.html">LKServerError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/LKServerResponse.html">LKServerResponse</a>
               </li>
             </ul>
           </li>
@@ -118,6 +148,9 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/LKBLELoggerProtocol.html">LKBLELoggerProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a>
               </li>
             </ul>
@@ -128,6 +161,12 @@
         <section>
           <section class="section">
             <h1>LKServer</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKServer</span></code></pre>
+
+                </div>
+              </div>
             <p>Undocumented</p>
 
           </section>
@@ -137,9 +176,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication8LKServerO3hmlA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/hml" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication8LKServerO3hmlA2CmF">hml</a>
+                    <a name="/s:18LKBLECommunication8LKServerO3devyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/dev" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication8LKServerO3devyA2CmF">dev</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -150,19 +189,23 @@
                         <p>Undocumented</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">dev</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication8LKServerO4prodA2CmF"></a>
+                    <a name="/s:18LKBLECommunication8LKServerO4prodyA2CmF"></a>
                     <a name="//apple_ref/swift/Element/prod" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication8LKServerO4prodA2CmF">prod</a>
+                    <a class="token" href="#/s:18LKBLECommunication8LKServerO4prodyA2CmF">prod</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -173,19 +216,23 @@
                         <p>Undocumented</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">prod</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication8LKServerO6customACSScACmF"></a>
-                    <a name="//apple_ref/swift/Element/custom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication8LKServerO6customACSScACmF">custom</a>
+                    <a name="/s:18LKBLECommunication8LKServerO3hmlyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/hml" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication8LKServerO3hmlyA2CmF">hml</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -195,6 +242,41 @@
                       <div class="abstract">
                         <p>Undocumented</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">hml</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication8LKServerO6customyACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/custom(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication8LKServerO6customyACSScACmF">custom(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">custom</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -204,8 +286,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-10-24)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

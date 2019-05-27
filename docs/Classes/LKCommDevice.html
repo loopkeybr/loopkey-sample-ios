@@ -14,7 +14,7 @@
     <a title="LKCommDevice Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (53% documented)</p>
+        <p><a href="../index.html"> Docs</a> (30% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -46,6 +46,12 @@
                 <a href="../Classes/LKCommunicationManager.html">LKCommunicationManager</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/LKCustomCommandConfiguration.html">LKCustomCommandConfiguration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCustomCommandType.html">LKCustomCommandType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/LKDeviceCommunicator.html">LKDeviceCommunicator</a>
               </li>
               <li class="nav-group-task">
@@ -61,6 +67,24 @@
                 <a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/LKPermissionSettings.html">LKPermissionSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKPermissionTime.html">LKPermissionTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker.html">LKRemoteUnlocker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker/RemoteUnlockResponse.html">– RemoteUnlockResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker/RemoteUnlockError.html">– RemoteUnlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSerial.html">LKSerial</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/LKServerNetworking.html">LKServerNetworking</a>
               </li>
               <li class="nav-group-task">
@@ -72,7 +96,13 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/LKCommCommandKind.html">LKCommCommandKind</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKCommDeviceMode.html">LKCommDeviceMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceReaderMode.html">LKCommDeviceReaderMode</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/LKCommDeviceType.html">LKCommDeviceType</a>
@@ -87,16 +117,16 @@
                 <a href="../Enums/LKDeviceErrorType.html">LKDeviceErrorType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/LKDeviceResponseAttributeKey.html">LKDeviceResponseAttributeKey</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKDeviceResponseType.html">LKDeviceResponseType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/LKPermissionFlags.html">LKPermissionFlags</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKServer.html">LKServer</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/LKServerError.html">LKServerError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/LKServerResponse.html">LKServerResponse</a>
               </li>
             </ul>
           </li>
@@ -118,6 +148,9 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/LKBLELoggerProtocol.html">LKBLELoggerProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a>
               </li>
             </ul>
@@ -130,7 +163,8 @@
             <h1>LKCommDevice</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
@@ -140,6 +174,34 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)doorId"></a>
+                    <a name="//apple_ref/swift/Property/doorId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)doorId">doorId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Door ID when available. <code>-1</code> otherwise.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">doorId</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -160,7 +222,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">serialData</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">let</span> <span class="nv">serialData</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
@@ -187,7 +250,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">rollCount</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">rollCount</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -214,7 +278,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -241,7 +306,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">rssi</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">rssi</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -268,7 +334,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -295,7 +362,36 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hasMessageForServer</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">hasMessageForServer</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)firmwareVersion"></a>
+                    <a name="//apple_ref/swift/Property/firmwareVersion" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)firmwareVersion">firmwareVersion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">firmwareVersion</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -322,7 +418,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">latitude</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
 
                         </div>
                       </div>
@@ -349,7 +446,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">longitude</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
 
                         </div>
                       </div>
@@ -376,7 +474,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -403,34 +502,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)schedule"></a>
-                    <a name="//apple_ref/swift/Property/schedule" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)schedule">schedule</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">adminKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -457,7 +530,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="../Enums/LKCommDeviceMode.html">LKCommDeviceMode</a></span></code></pre>
 
                         </div>
                       </div>
@@ -484,7 +558,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">unlockTime</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -511,7 +586,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">disableTouch</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -538,7 +614,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">invertSensor</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -565,7 +642,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">kind</span><span class="p">:</span> <span class="kt"><a href="../Enums/LKCommDeviceType.html">LKCommDeviceType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -592,7 +670,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">commandData</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -602,9 +681,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)serial"></a>
-                    <a name="//apple_ref/swift/Property/serial" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)serial">serial</a>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)serialInf"></a>
+                    <a name="//apple_ref/swift/Property/serialInf" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)serialInf">serialInf</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -619,7 +698,175 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKCommDevice</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">serialInf</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKSerial.html">LKSerial</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)batteryLevel"></a>
+                    <a name="//apple_ref/swift/Property/batteryLevel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)batteryLevel">batteryLevel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">batteryLevel</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)schedule"></a>
+                    <a name="//apple_ref/swift/Property/schedule" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)schedule">schedule</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">schedule</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKCommSchedule.html">LKCommSchedule</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)newKey"></a>
+                    <a name="//apple_ref/swift/Property/newKey" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)newKey">newKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">newKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)permissionSettings"></a>
+                    <a name="//apple_ref/swift/Property/permissionSettings" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)permissionSettings">permissionSettings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">permissionSettings</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKPermissionSettings.html">LKPermissionSettings</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)readerMode"></a>
+                    <a name="//apple_ref/swift/Property/readerMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKCommDevice(py)readerMode">readerMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">readerMode</span><span class="p">:</span> <span class="kt"><a href="../Enums/LKCommDeviceReaderMode.html">LKCommDeviceReaderMode</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication12LKCommDeviceC6serialSSvp"></a>
+                    <a name="//apple_ref/swift/Property/serial" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication12LKCommDeviceC6serialSSvp">serial</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">serial</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -646,7 +893,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">withSerial</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">withSerial</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -677,8 +925,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-10-24)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

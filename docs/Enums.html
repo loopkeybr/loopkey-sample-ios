@@ -10,10 +10,11 @@
     
   </head>
   <body>
+    <a name="//apple_ref/swift/Section/Enumerations" class="dashAnchor"></a>
     <a title="Enumerations  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (53% documented)</p>
+        <p><a href="index.html"> Docs</a> (30% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -45,6 +46,12 @@
                 <a href="Classes/LKCommunicationManager.html">LKCommunicationManager</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/LKCustomCommandConfiguration.html">LKCustomCommandConfiguration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LKCustomCommandType.html">LKCustomCommandType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/LKDeviceCommunicator.html">LKDeviceCommunicator</a>
               </li>
               <li class="nav-group-task">
@@ -60,6 +67,24 @@
                 <a href="Classes/LKDeviceResponse.html">LKDeviceResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/LKPermissionSettings.html">LKPermissionSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LKPermissionTime.html">LKPermissionTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LKRemoteUnlocker.html">LKRemoteUnlocker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LKRemoteUnlocker/RemoteUnlockResponse.html">– RemoteUnlockResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LKRemoteUnlocker/RemoteUnlockError.html">– RemoteUnlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LKSerial.html">LKSerial</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/LKServerNetworking.html">LKServerNetworking</a>
               </li>
               <li class="nav-group-task">
@@ -71,7 +96,13 @@
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Enums/LKCommCommandKind.html">LKCommCommandKind</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/LKCommDeviceMode.html">LKCommDeviceMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/LKCommDeviceReaderMode.html">LKCommDeviceReaderMode</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/LKCommDeviceType.html">LKCommDeviceType</a>
@@ -86,16 +117,16 @@
                 <a href="Enums/LKDeviceErrorType.html">LKDeviceErrorType</a>
               </li>
               <li class="nav-group-task">
+                <a href="Enums/LKDeviceResponseAttributeKey.html">LKDeviceResponseAttributeKey</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/LKDeviceResponseType.html">LKDeviceResponseType</a>
               </li>
               <li class="nav-group-task">
+                <a href="Enums/LKPermissionFlags.html">LKPermissionFlags</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/LKServer.html">LKServer</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/LKServerError.html">LKServerError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/LKServerResponse.html">LKServerResponse</a>
               </li>
             </ul>
           </li>
@@ -116,6 +147,9 @@
           <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/LKBLELoggerProtocol.html">LKBLELoggerProtocol</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a>
               </li>
@@ -154,7 +188,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKDeviceErrorType</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKDeviceErrorType</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -177,6 +211,14 @@
                         <p>Undocumented</p>
 
                         <a href="Enums/LKDeviceErrorDescriptions.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKDeviceErrorDescriptions</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -202,23 +244,20 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKDeviceResponseType</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKDeviceResponseType</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication8LKServerO"></a>
-                    <a name="//apple_ref/swift/Enum/LKServer" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication8LKServerO">LKServer</a>
+                    <a name="/s:18LKBLECommunication28LKDeviceResponseAttributeKeyO"></a>
+                    <a name="//apple_ref/swift/Enum/LKDeviceResponseAttributeKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication28LKDeviceResponseAttributeKeyO">LKDeviceResponseAttributeKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,27 +267,15 @@
                       <div class="abstract">
                         <p>Undocumented</p>
 
-                        <a href="Enums/LKServer.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/LKDeviceResponseAttributeKey.html" class="slightly-smaller">See more</a>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:18LKBLECommunication16LKServerResponseO"></a>
-                    <a name="//apple_ref/swift/Enum/LKServerResponse" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication16LKServerResponseO">LKServerResponse</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKDeviceResponseAttributeKey</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
 
-                        <a href="Enums/LKServerResponse.html" class="slightly-smaller">See more</a>
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -278,7 +305,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKCommDeviceMode</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKCommDeviceMode</span> <span class="p">:</span> <span class="kt">UInt8</span></code></pre>
 
                         </div>
                       </div>
@@ -311,7 +339,43 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKCommDeviceType</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKCommDeviceType</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@E@LKCommDeviceReaderMode"></a>
+                    <a name="//apple_ref/swift/Enum/LKCommDeviceReaderMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@E@LKCommDeviceReaderMode">LKCommDeviceReaderMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Describes the types of readers available.</p>
+
+<ul>
+<li>noReader: No reader.</li>
+<li>bigEndian: Big endian (default).</li>
+<li>littleEndian: Little endian (e.g. ControlID).</li>
+</ul>
+
+                        <a href="Enums/LKCommDeviceReaderMode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKCommDeviceReaderMode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -325,9 +389,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:18LKBLECommunication13LKServerErrorO"></a>
-                    <a name="//apple_ref/swift/Enum/LKServerError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:18LKBLECommunication13LKServerErrorO">LKServerError</a>
+                    <a name="/s:18LKBLECommunication17LKCommCommandKindO"></a>
+                    <a name="//apple_ref/swift/Enum/LKCommCommandKind" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication17LKCommCommandKindO">LKCommCommandKind</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -335,17 +399,80 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Represents an error returned from the server.</p>
+                        <p>Undocumented</p>
 
-<p>Unless specified otherwise, the <code>String</code> parameter is the description message returned directly from the server.</p>
-
-                        <a href="Enums/LKServerError.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/LKCommCommandKind.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKServerError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKCommCommandKind</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18LKBLECommunication8LKServerO"></a>
+                    <a name="//apple_ref/swift/Enum/LKServer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication8LKServerO">LKServer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Enums/LKServer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKServer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@LKBLECommunication@E@LKPermissionFlags"></a>
+                    <a name="//apple_ref/swift/Enum/LKPermissionFlags" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@E@LKPermissionFlags">LKPermissionFlags</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Enums/LKPermissionFlags.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKPermissionFlags</span> <span class="p">:</span> <span class="kt">UInt8</span></code></pre>
 
                         </div>
                       </div>
@@ -384,7 +511,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKCommState</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKCommState</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -396,8 +524,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-10-24)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

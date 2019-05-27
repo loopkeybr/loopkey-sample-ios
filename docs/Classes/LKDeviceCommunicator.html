@@ -14,7 +14,7 @@
     <a title="LKDeviceCommunicator Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (53% documented)</p>
+        <p><a href="../index.html"> Docs</a> (30% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -46,6 +46,12 @@
                 <a href="../Classes/LKCommunicationManager.html">LKCommunicationManager</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/LKCustomCommandConfiguration.html">LKCustomCommandConfiguration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCustomCommandType.html">LKCustomCommandType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/LKDeviceCommunicator.html">LKDeviceCommunicator</a>
               </li>
               <li class="nav-group-task">
@@ -61,6 +67,24 @@
                 <a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/LKPermissionSettings.html">LKPermissionSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKPermissionTime.html">LKPermissionTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker.html">LKRemoteUnlocker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker/RemoteUnlockResponse.html">– RemoteUnlockResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKRemoteUnlocker/RemoteUnlockError.html">– RemoteUnlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSerial.html">LKSerial</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/LKServerNetworking.html">LKServerNetworking</a>
               </li>
               <li class="nav-group-task">
@@ -72,7 +96,13 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/LKCommCommandKind.html">LKCommCommandKind</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKCommDeviceMode.html">LKCommDeviceMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LKCommDeviceReaderMode.html">LKCommDeviceReaderMode</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/LKCommDeviceType.html">LKCommDeviceType</a>
@@ -87,16 +117,16 @@
                 <a href="../Enums/LKDeviceErrorType.html">LKDeviceErrorType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/LKDeviceResponseAttributeKey.html">LKDeviceResponseAttributeKey</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKDeviceResponseType.html">LKDeviceResponseType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/LKPermissionFlags.html">LKPermissionFlags</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LKServer.html">LKServer</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/LKServerError.html">LKServerError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/LKServerResponse.html">LKServerResponse</a>
               </li>
             </ul>
           </li>
@@ -118,6 +148,9 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/LKBLELoggerProtocol.html">LKBLELoggerProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/LKDiscoveryProtocol.html">LKDiscoveryProtocol</a>
               </li>
             </ul>
@@ -130,7 +163,8 @@
             <h1>LKDeviceCommunicator</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKDeviceCommunicator</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">LKDeviceCommunicator</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
@@ -153,6 +187,34 @@ delegate who implements the LKDeviceCommunicatorProtocol.</li>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(py)logger"></a>
+                    <a name="//apple_ref/swift/Property/logger" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(py)logger">logger</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">logger</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKBLELoggerProtocol.html">LKBLELoggerProtocol</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO"></a>
                     <a name="//apple_ref/swift/Enum/LKMessagesTypes" class="dashAnchor"></a>
                     <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC15LKMessagesTypesO">LKMessagesTypes</a>
@@ -163,14 +225,18 @@ delegate who implements the LKDeviceCommunicatorProtocol.</li>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Enum with the types of communications that are possible.</p>
+                        <p>Specifies the message types available for communication with the LoopKey Device.</p>
 
 <ul>
-<li>UNLOCK: Unlock door type of communication.</li>
-<li>LOCK:   Lock door type of communication.</li>
-<li>EDIT:   Edit door type of communication.</li>
-<li>CONF:   Initial configuration type of communication.</li>
-<li>RESET:  Reset door type of communication</li>
+<li>Unlock: unlock operation.</li>
+<li>Lock: lock operation.</li>
+<li>Edit: edit operation.</li>
+<li>Reset: reset operation.</li>
+<li>LogRequest: log request operation.</li>
+<li>Schedule: schedule operation.</li>
+<li>ScheduleStop: stop schedule operation.</li>
+<li>ScheduleCheck: check schedule operation.</li>
+<li>Custom: custom operation. Warning: Do not use this with communicateWithType method.</li>
 </ul>
 
                         <a href="../Classes/LKDeviceCommunicator/LKMessagesTypes.html" class="slightly-smaller">See more</a>
@@ -179,7 +245,8 @@ delegate who implements the LKDeviceCommunicatorProtocol.</li>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LKMessagesTypes</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -206,7 +273,8 @@ delegate who implements the LKDeviceCommunicatorProtocol.</li>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKCommDevice.html">LKCommDevice</a></span><span class="p">,</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKCommUser.html">LKCommUser</a></span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKCommDevice.html">LKCommDevice</a></span><span class="p">,</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKCommUser.html">LKCommUser</a></span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -268,8 +336,9 @@ delegate who implements the LKDeviceCommunicatorProtocol.</li>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicateWithType</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKDeviceCommunicator/LKMessagesTypes.html">LKMessagesTypes</a></span><span class="p">,</span>
-                                    <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a></span><span class="p">?,</span> <span class="kt"><a href="../Classes/LKDeviceError.html">LKDeviceError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicateWithType</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKDeviceCommunicator/LKMessagesTypes.html">LKMessagesTypes</a></span><span class="p">,</span>
+                                <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a></span><span class="p">?,</span> <span class="kt"><a href="../Classes/LKDeviceError.html">LKDeviceError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -337,7 +406,8 @@ device response. Otherwise, the second argument will have the error.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicate</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">withCallback</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicate</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">withCallback</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -404,8 +474,9 @@ device response. Otherwise, the second argument will have the error.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicateWithData</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
-                                    <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a></span><span class="p">?,</span> <span class="kt"><a href="../Classes/LKDeviceError.html">LKDeviceError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicateWithData</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+                                <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a></span><span class="p">?,</span> <span class="kt"><a href="../Classes/LKDeviceError.html">LKDeviceError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -450,6 +521,69 @@ device response. Otherwise, the second argument will have the error.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC17communicateCustom7command8callbackSbAA19LKCustomCommandTypeC_yAA0B8ResponseCSg_AA0B5ErrorCSgtctF"></a>
+                    <a name="//apple_ref/swift/Method/communicateCustom(command:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC17communicateCustom7command8callbackSbAA19LKCustomCommandTypeC_yAA0B8ResponseCSg_AA0B5ErrorCSgtctF">communicateCustom(command:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Communicate custom command with device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">communicateCustom</span><span class="p">(</span><span class="nv">command</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKCustomCommandType.html">LKCustomCommandType</a></span><span class="p">,</span>
+                              <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/LKDeviceResponse.html">LKDeviceResponse</a></span><span class="p">?,</span> <span class="kt"><a href="../Classes/LKDeviceError.html">LKDeviceError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>command</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The custom command to send.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Will be called with the result of the sent command. Will be called if this method returns <code>true</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if will try to send command and <code>false</code> otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)getRollCount:"></a>
                     <a name="//apple_ref/swift/Method/getRollCount(_:)" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)getRollCount:">getRollCount(_:)</a>
@@ -467,7 +601,8 @@ device response. Otherwise, the second argument will have the error.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRollCount</span><span class="p">(</span><span class="n">_</span> <span class="nv">callback</span><span class="p">:</span> <span class="p">((</span><span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">getRollCount</span><span class="p">(</span><span class="n">_</span> <span class="nv">callback</span><span class="p">:</span> <span class="p">((</span><span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -500,9 +635,9 @@ device response. Otherwise, the second argument will have the error.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)disconnect"></a>
+                    <a name="/s:18LKBLECommunication20LKDeviceCommunicatorC10disconnectyyF"></a>
                     <a name="//apple_ref/swift/Method/disconnect()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@LKBLECommunication@objc(cs)LKDeviceCommunicator(im)disconnect">disconnect()</a>
+                    <a class="token" href="#/s:18LKBLECommunication20LKDeviceCommunicatorC10disconnectyyF">disconnect()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -517,7 +652,7 @@ device response. Otherwise, the second argument will have the error.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">disconnect</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">disconnect</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -529,8 +664,8 @@ device response. Otherwise, the second argument will have the error.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-10-24)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
