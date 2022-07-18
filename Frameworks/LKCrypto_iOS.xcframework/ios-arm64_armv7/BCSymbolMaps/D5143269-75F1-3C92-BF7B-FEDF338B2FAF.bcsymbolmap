@@ -1,0 +1,45 @@
+BCSymbolMap Version: 2.0
+Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk
+iPhoneOS15.5.sdk
+/Users/suprisul/Library/Caches/org.carthage.CarthageKit/DerivedData/13.4.1_13F100/lkcrypto-ios/v1.2.1/Build/Intermediates.noindex/ArchiveIntermediates/LKCrypto_iOS/IntermediateBuildFilesPath/LKCrypto.build/Release-iphoneos/LKCrypto_iOS.build/DerivedSources/LKCrypto_iOS_vers.c
+/Users/suprisul/Projects/lklib-ios/Carthage/Checkouts/lkcrypto-ios
++[LKCryptoMessages sha256ForKey:withRowCount:]
++[LKCryptoMessages hMacForMessage:withKey:]
++[LKCryptoMessages generateKey]
++[LKCryptoMessages generateSaltWithSize:]
++[LKCryptoMessages checkIFHMACOK:withKey:withRollCount:]
+_OBJC_SELECTOR_REFERENCES_
+_OBJC_SELECTOR_REFERENCES_.2
+_OBJC_CLASSLIST_REFERENCES_$_
+_OBJC_SELECTOR_REFERENCES_.4
+_OBJC_CLASSLIST_REFERENCES_$_.5
+_OBJC_SELECTOR_REFERENCES_.7
+_OBJC_SELECTOR_REFERENCES_.9
+_OBJC_SELECTOR_REFERENCES_.11
+_OBJC_SELECTOR_REFERENCES_.13
+_OBJC_SELECTOR_REFERENCES_.15
+_OBJC_SELECTOR_REFERENCES_.17
+_OBJC_SELECTOR_REFERENCES_.19
+__OBJC_$_CLASS_METHODS_LKCryptoMessages
+__OBJC_METACLASS_RO_$_LKCryptoMessages
+__OBJC_CLASS_RO_$_LKCryptoMessages
+/Users/suprisul/Projects/lklib-ios/Carthage/Checkouts/lkcrypto-ios/LKCrypto/LKCryptoMessages.m
+LKCrypto/LKCryptoMessages.m
+llvm.loop.mustprogress
++[LKSpeckUtil cipher:withKey:]
++[LKSpeckUtil decipher:withKey:]
+_findkey
+__iv
+_OBJC_SELECTOR_REFERENCES_.6
+__OBJC_$_CLASS_METHODS_LKSpeckUtil
+__OBJC_METACLASS_RO_$_LKSpeckUtil
+__OBJC_CLASS_RO_$_LKSpeckUtil
+/Users/suprisul/Projects/lklib-ios/Carthage/Checkouts/lkcrypto-ios/LKCrypto/LKSpeckUtil.m
+findkey
+LKCrypto/LKSpeckUtil.m
+speck256_decrypt_cbc_pkcs7
+xor128
+speckdecrypt
+speck256_encrypt_cbc_pkcs7
+speckencrypt

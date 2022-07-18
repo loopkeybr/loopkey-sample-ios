@@ -1,0 +1,11 @@
+framework module LKLib_Light {
+  umbrella header "LKLib_Light.h"
+
+  export *
+  module * { export * }
+}
+
+module LKLib_Light.Swift {
+    header "LKLib_Light-Swift.h"
+    requires objc
+}

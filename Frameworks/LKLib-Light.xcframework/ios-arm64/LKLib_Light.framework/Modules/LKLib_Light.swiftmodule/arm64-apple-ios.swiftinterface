@@ -1,0 +1,1157 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LKLib_Light
+import CoreBluetooth
+import Foundation
+import LKCrypto_iOS
+@_exported import LKLib_Light
+import Swift
+import UIKit
+import _Concurrency
+import os
+public class LKCommandRunner : LKLib_Light.LKBLEConnectionProtocol {
+  public static let shared: LKLib_Light.LKCommandRunner
+  public init()
+  public func enqueue(command: LKLib_Light.LKCommandProtocol)
+  public func deviceDidConnect(_ peripheral: CoreBluetooth.CBPeripheral)
+  public func deviceDidDisconnect(_ peripheral: CoreBluetooth.CBPeripheral, withError: Swift.Error?)
+  @objc deinit
+}
+public enum LKRebootResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case rebootWaitTimeNotReached
+  case messageHaveWrongSize
+  case notAuthorized
+  case checksumError
+  case notConfigured
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKRebootResponse.RawValue)
+  public var rawValue: LKLib_Light.LKRebootResponse.RawValue {
+    get
+  }
+}
+public class LKRebootCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKRebootResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKRebootResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKRawDataResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok(Foundation.Data)
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKRawDataResponse.RawValue)
+  public var rawValue: LKLib_Light.LKRawDataResponse.RawValue {
+    get
+  }
+}
+public class LKRawDataCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKRawDataResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, commandData: Foundation.Data, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKRawDataResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKProductName : Swift.String {
+  case lk81
+  case lk51
+  case lkBio
+  case lkPlus
+  case lkOne
+  case lkSmart
+  case gates
+  case ttLock
+  case unkwown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct LKSerial : Swift.CustomStringConvertible {
+  public var serialBase32: Swift.String
+  public var subsidiary: Swift.String
+  public var product: LKLib_Light.LKProductName
+  public var series: Swift.String
+  public var batchNumber: Swift.String
+  public var unitNumber: Swift.String
+  public var checksumOrSignature: Swift.String
+  public var raw: Foundation.Data
+  public init(serial: Foundation.Data)
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+public protocol LKMountMessageProtocol {
+  func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+}
+public enum LKCommandSource : Swift.UInt8 {
+  case server
+  case user
+  case admin
+  case open
+  case halfServer
+  case halfUser
+  case halfAdmin
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum LKCommandResponse : Swift.Error, Swift.RawRepresentable {
+  public typealias RawValue = Swift.String
+  case deviceDidDisconnectUnexpectedly
+  case deviceBecomeOutOfReachable
+  case rollCountDecryptFailed
+  case userKeyMissing
+  case rollCountMissing
+  case synchronizationIssue
+  case communicationIssue
+  case invalidResponse
+  case serverCommError
+  case unauthorized
+  case doorNotFound
+  case deviceNotConfigured
+  case messageSignError
+  case unknown
+  public var rawValue: LKLib_Light.LKCommandResponse.RawValue {
+    get
+  }
+  public init?(rawValue: LKLib_Light.LKCommandResponse.RawValue)
+}
+public protocol LKCommandProtocol : AnyObject, LKLib_Light.LKMountMessageProtocol, LKLib_Light.LKSecurityProtocol {
+  var device: LKLib_Light.LKCommDevice { get set }
+  var user: LKLib_Light.LKCommUser { get }
+  var commandData: Foundation.Data { get }
+  var messageSource: LKLib_Light.LKCommandSource { get }
+  var commandName: Swift.String { get }
+  func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+}
+public protocol LKBLEDiscoveryObserverProtocol : AnyObject {
+  func discoveredDevice(_ peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], RSSI: Foundation.NSNumber)
+}
+public protocol LKBLEConnectionProtocol : AnyObject {
+  func deviceDidConnect(_ peripheral: CoreBluetooth.CBPeripheral)
+  func deviceDidDisconnect(_ peripheral: CoreBluetooth.CBPeripheral, withError: Swift.Error?)
+}
+public protocol LKBLEStateObserverProtocol : AnyObject {
+  func bleStateChanged(state: LKLib_Light.LKBLEState)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LKBLEHandler : ObjectiveC.NSObject {
+  public static let shared: LKLib_Light.LKBLEHandler
+  public func addBLEStateObserver(_ observer: LKLib_Light.LKBLEStateObserverProtocol)
+  public func addConnectionObservers(_ observer: LKLib_Light.LKBLEConnectionProtocol)
+  public func addDiscoveryObserver(_ observer: LKLib_Light.LKBLEDiscoveryObserverProtocol)
+  public func removeBLEStateObserver(_ observer: LKLib_Light.LKBLEStateObserverProtocol)
+  public func removeConnectionObservers(_ observer: LKLib_Light.LKBLEConnectionProtocol)
+  public func removeDiscoveryObserver(_ observer: LKLib_Light.LKBLEDiscoveryObserverProtocol)
+  @objc deinit
+}
+extension LKLib_Light.LKBLEHandler : CoreBluetooth.CBCentralManagerDelegate {
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDiscover peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], rssi RSSI: Foundation.NSNumber)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didConnect peripheral: CoreBluetooth.CBPeripheral)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didFailToConnect peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDisconnectPeripheral peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc dynamic public func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
+}
+public enum LKPermissionRemoveResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case signatureError
+  case checksumError
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKPermissionRemoveResponse.RawValue)
+  public var rawValue: LKLib_Light.LKPermissionRemoveResponse.RawValue {
+    get
+  }
+}
+public class LKPermissionRemoveCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var permission: LKLib_Light.LKPermission
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKPermissionRemoveResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, permission: LKLib_Light.LKPermission, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKPermissionRemoveResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LKUtilsSwift {
+  @objc deinit
+}
+extension Foundation.Data {
+  public func dataPacketsWithMaximumSize(_ size: Swift.Int) -> [Foundation.Data]
+  public var CRC16: Swift.UInt16 {
+    get
+  }
+  public func dataWithCRC16() -> Foundation.Data
+  public func checkCRC16() -> Swift.Bool
+  public func base32EncodedString() -> Swift.String
+  public func isOnlyZeroes() -> Swift.Bool
+}
+extension Swift.String {
+  public func dataFromHexadecimalString() -> Foundation.Data?
+  public func urlDecoding() -> Swift.String?
+  public func isValidEmail() -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers public class LKVersion {
+  final public let appVersion: Swift.String
+  final public let internalVersion: Swift.String
+  @objc deinit
+}
+public enum LKCheckTimerResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case timerOn
+  case timerOff
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case signatureError
+  case checksumError
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKCheckTimerResponse.RawValue)
+  public var rawValue: LKLib_Light.LKCheckTimerResponse.RawValue {
+    get
+  }
+}
+public class LKCheckTimerCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKCheckTimerResponse, Swift.Int32, Swift.UInt32) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKCheckTimerResponse, Swift.Int32, Swift.UInt32) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class LKPermissionTime : ObjectiveC.NSObject {
+  @objc public var hour: Swift.UInt8
+  @objc public var minute: Swift.UInt8
+  @objc override dynamic public init()
+  @objc public init(hour: Swift.UInt8, minute: Swift.UInt8)
+  @objc public func asData() -> Foundation.Data
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public enum LKSetupTimerResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case timerAlreadySet
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case signatureError
+  case checksumError
+  case genericError
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKSetupTimerResponse.RawValue)
+  public var rawValue: LKLib_Light.LKSetupTimerResponse.RawValue {
+    get
+  }
+}
+public class LKSetupTimerCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimerResponse) -> Swift.Void
+  public var startTime: Swift.UInt32
+  public var durationTime: Swift.UInt32
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, startTime: Swift.UInt32, durationTime: Swift.UInt32, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimerResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKSetupFingerPrintMode : Swift.UInt8 {
+  case start
+  case status
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum LKSetupFingerPrintStatus : Swift.UInt8 {
+  case `init`
+  case waitingFinger
+  case waitingFingerRemoval
+  case storeModel
+  case complete
+  case reading
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum LKSetupFingerPrintResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok(LKLib_Light.LKSetupFingerPrintStatus)
+  case fingerPrintIdAlreadyExist
+  case messageHasWrongSize
+  case keyDelayed
+  case permissionError
+  case signatureSyncError
+  case checksumError
+  case notConfigured
+  case generic
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKSetupFingerPrintResponse.RawValue)
+  public var rawValue: LKLib_Light.LKSetupFingerPrintResponse.RawValue {
+    get
+  }
+}
+public class LKSetupFingerPrintCommand : LKLib_Light.LKCommandProtocol {
+  public typealias FingerprintStep = Swift.UInt8
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandName: Swift.String
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, permissionId: Swift.UInt32, mode: LKLib_Light.LKSetupFingerPrintMode, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupFingerPrintResponse, LKLib_Light.LKSetupFingerPrintCommand.FingerprintStep) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKGetFirmwareResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case messageHasWrongSize
+  case permissionError
+  case checksumError
+  case generic
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKGetFirmwareResponse.RawValue)
+  public var rawValue: LKLib_Light.LKGetFirmwareResponse.RawValue {
+    get
+  }
+}
+public class LKGetFirmwareCommand : LKLib_Light.LKCommandProtocol {
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandName: Swift.String
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKGetFirmwareResponse, LKLib_Light.LKVersion?) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKGetFirmwareResponse, LKLib_Light.LKVersion?) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKDFUResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case signatureError
+  case checksumError
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKDFUResponse.RawValue)
+  public var rawValue: LKLib_Light.LKDFUResponse.RawValue {
+    get
+  }
+}
+public class LKDFUCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKDFUResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKDFUResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKCustomResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case custAddrError
+  case custError
+  case custSize
+  case signatureSyncError
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKCustomResponse.RawValue)
+  public var rawValue: LKLib_Light.LKCustomResponse.RawValue {
+    get
+  }
+}
+public class LKCustomCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var command: Swift.String
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKCustomResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, command: Swift.String, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKCustomResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKBLEState {
+  case enabled
+  case disabled
+  case unsupported
+  case unauthorized
+  case unknown
+  public static func == (a: LKLib_Light.LKBLEState, b: LKLib_Light.LKBLEState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol LKDiscoveryProtocol : AnyObject {
+  func didUpdateVisible(_ devices: [LKLib_Light.LKCommDevice])
+}
+public enum LKGetBatteryResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case messageHasWrongSize
+  case permissionError
+  case checksumError
+  case ok
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKGetBatteryResponse.RawValue)
+  public var rawValue: LKLib_Light.LKGetBatteryResponse.RawValue {
+    get
+  }
+}
+public class LKGetBatteryCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKGetBatteryResponse, LKLib_Light.LKBattery?) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKGetBatteryResponse, LKLib_Light.LKBattery?) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKPermissionFlags : Swift.UInt8 {
+  case privacyMode
+  case noFlags
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum LKPermissionMode : Swift.UInt8 {
+  case invalid
+  case card
+  case password
+  case bot
+  case passwordOtp
+  case qrCode
+  case app
+  case fingerPrint
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public class LKPermission {
+  public var permissionMode: LKLib_Light.LKPermissionMode
+  public var authorizationId: Swift.UInt32
+  public var initialPeriod: Swift.UInt32
+  public var finalPeriod: Swift.UInt32
+  public var timeInit: LKLib_Light.LKPermissionTime
+  public var timeEnd: LKLib_Light.LKPermissionTime
+  public var weekdays: Swift.UInt8
+  public var flags: Swift.UInt8
+  public init(authorizationId: Swift.String, initialPeriod: Swift.UInt32?, finalPeriod: Swift.UInt32?, timeInit: LKLib_Light.LKPermissionTime?, timeEnd: LKLib_Light.LKPermissionTime?, weekdays: Swift.UInt8, flags: Swift.UInt8, permissionMode: LKLib_Light.LKPermissionMode)
+  @objc public func dataValue() -> Foundation.Data
+  @objc deinit
+}
+public enum LKGetLastCardResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case lastCardNotFound
+  case messageHasWrongSize
+  case permissionError
+  case checksumError
+  case unavailableOnline
+  case ok
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKGetBatteryResponse.RawValue)
+  public var rawValue: LKLib_Light.LKGetLastCardResponse.RawValue {
+    get
+  }
+}
+public class LKGetLastCardCommand : LKLib_Light.LKCommandProtocol {
+  public var device: LKLib_Light.LKCommDevice
+  final public let user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  final public let messageSource: LKLib_Light.LKCommandSource
+  final public let commandName: Swift.String
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKGetLastCardResponse, Swift.UInt32?) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LKTimezone {
+  public var abbrev: Swift.String
+  public var week: Swift.Int8
+  public var dow: Swift.Int8
+  public var month: Swift.Int8
+  public var hour: Swift.Int8
+  public var offset: Swift.Int16
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LKParameter {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LKBattery {
+  final public let voltage: Swift.UInt16
+  final public let level: Swift.UInt16
+  final public let voltageMax: Swift.UInt16
+  @objc deinit
+}
+@objc public class LKCommUser : ObjectiveC.NSObject {
+  @objc public init(id: Swift.Int32)
+  public var id: Swift.Int32
+  @objc deinit
+}
+public enum LKUnlockResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case alreadyOpen
+  case alreadyUnlocked
+  case okTimer
+  case messageHasWrongSize
+  case permissionError
+  case signatureSyncError
+  case checksumError
+  case keyDelayed
+  case notConfigured
+  case generic
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKUnlockResponse.RawValue)
+  public var rawValue: LKLib_Light.LKUnlockResponse.RawValue {
+    get
+  }
+}
+public class LKUnlockCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKUnlockResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKUnlockResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKRekeyResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case signatureError
+  case keyInvalid
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case checksumError
+  case genericError
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKUnlockResponse.RawValue)
+  public var rawValue: LKLib_Light.LKRekeyResponse.RawValue {
+    get
+  }
+}
+public class LKRekeyCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKRekeyResponse) -> Swift.Void
+  public var currentUserKey: Foundation.Data
+  public var newUserKey: Foundation.Data
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, currentUserKey: Foundation.Data, newUserKey: Foundation.Data, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKRekeyResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKEditResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case signatureError
+  case checksumError
+  case unconfigured
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKUnlockResponse.RawValue)
+  public var rawValue: LKLib_Light.LKEditResponse.RawValue {
+    get
+  }
+}
+public class LKEditCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKEditResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKEditResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LKScheduler {
+  public var userId: Swift.Int32?
+  public var startTimer: Swift.Int32?
+  public var stopTimer: Swift.Int32?
+  public var timeInit: Swift.Int32?
+  public var state: Swift.Int8?
+  @objc deinit
+}
+public enum LKPeripheralErrors : Swift.Error {
+  case deviceDidDisconnectedUnexpectedly
+  case deviceOutOfRange
+  case obtainCriticalService
+  case obtainCriticalCharacteristics
+  case discoverServices
+  case txState
+  case wrongSizeMessage
+  public static func == (a: LKLib_Light.LKPeripheralErrors, b: LKLib_Light.LKPeripheralErrors) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum LKCancelTimerResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case alreadyCancelled
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case signatureError
+  case checksumError
+  case genericError
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKCancelTimerResponse.RawValue)
+  public var rawValue: LKLib_Light.LKCancelTimerResponse.RawValue {
+    get
+  }
+}
+public class LKCancelTimerCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKCancelTimerResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKCancelTimerResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LKCommandRepository {
+  public static func createUnlockCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKUnlockResponse) -> Swift.Void) -> LKLib_Light.LKUnlockCommand
+  public static func createDFUCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKDFUResponse) -> Swift.Void) -> LKLib_Light.LKDFUCommand
+  public static func createSetupTimerCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, startTime: Swift.UInt32, durationTime: Swift.UInt32, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimerResponse) -> Swift.Void) -> LKLib_Light.LKSetupTimerCommand
+  public static func createCheckTimerCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKCheckTimerResponse, Swift.Int32, Swift.UInt32) -> Swift.Void) -> LKLib_Light.LKCheckTimerCommand
+  public static func createCancelTimerCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKCancelTimerResponse) -> Swift.Void) -> LKLib_Light.LKCancelTimerCommand
+  public static func createResetCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKResetResponse) -> Swift.Void) -> LKLib_Light.LKResetCommand
+  public static func createRebootCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKRebootResponse) -> Swift.Void) -> LKLib_Light.LKRebootCommand
+  public static func createValidateKeyCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKValidateKeyResponse) -> Swift.Void) -> LKLib_Light.LKValidateKeyCommand
+  public static func createRawDataCommand(device: LKLib_Light.LKCommDevice, commandData: Foundation.Data, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKRawDataResponse) -> Swift.Void) -> LKLib_Light.LKRawDataCommand
+  public static func createCustomCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, command: Swift.String, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKCustomResponse) -> Swift.Void) -> LKLib_Light.LKCustomCommand
+  public static func createOpenConfigureCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKOpenConfigureResponse) -> Swift.Void) -> LKLib_Light.LKOpenConfigureCommand
+  public static func createRekeyCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, currentUserKey: Foundation.Data, newUserKey: Foundation.Data, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKRekeyResponse) -> Swift.Void) -> LKLib_Light.LKRekeyCommand
+  public static func createLogSyncCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, logc: Swift.String, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKLogSyncResponse) -> Swift.Void) -> LKLib_Light.LKLogSyncCommand
+  public static func createEditCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKEditResponse) -> Swift.Void) -> LKLib_Light.LKEditCommand
+  public static func createGetParamentersByAdmin(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, idParameters: [Swift.Int16], handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKGetParametersResponse, LKLib_Light.LKCommDevice?) -> Swift.Void) -> LKLib_Light.LKGetParametersCommand
+  public static func createPermissionSetCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, permission: LKLib_Light.LKPermission, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKPermissionSetResponse) -> Swift.Void) -> LKLib_Light.LKPermissionSetCommand
+  public static func createPermissionRemoveCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, permission: LKLib_Light.LKPermission, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKPermissionRemoveResponse) -> Swift.Void) -> LKLib_Light.LKPermissionRemoveCommand
+  public static func createGetFirmwareVersionCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKGetFirmwareResponse, LKLib_Light.LKVersion?) -> Swift.Void) -> LKLib_Light.LKGetFirmwareCommand
+  public static func createGetBatteryCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKGetBatteryResponse, LKLib_Light.LKBattery?) -> Swift.Void) -> LKLib_Light.LKGetBatteryCommand
+  public static func createGetLastCardCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKGetLastCardResponse, Swift.UInt32?) -> Swift.Void) -> LKLib_Light.LKGetLastCardCommand
+  public static func createSetupFingerprintCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, permissionId: Swift.UInt32, mode: LKLib_Light.LKSetupFingerPrintMode, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupFingerPrintResponse, LKLib_Light.LKSetupFingerPrintCommand.FingerprintStep) -> Swift.Void) -> LKLib_Light.LKSetupFingerPrintCommand
+  public static func createRemoveFingerprintCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, permissionId: Swift.UInt32, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKRemoveFingerPrintResponse) -> Swift.Void) -> LKLib_Light.LKRemoveFingerPrintCommand
+  public static func createSetupTimeCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimeResponse) -> Swift.Void) -> LKLib_Light.LKSetupTimeCommand
+  public static func createSetupTimezoneCommand(device: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, handler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimezoneResponse) -> Swift.Void) -> LKLib_Light.LKSetupTimezoneCommand
+  @objc deinit
+}
+public enum LKPermissionSetResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case permissionAlreadySet
+  case permissionParameterInvalid
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case signatureError
+  case checksumError
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKPermissionSetResponse.RawValue)
+  public var rawValue: LKLib_Light.LKPermissionSetResponse.RawValue {
+    get
+  }
+}
+public class LKPermissionSetCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var permission: LKLib_Light.LKPermission
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKPermissionSetResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, permission: LKLib_Light.LKPermission, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKPermissionSetResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKGetParametersResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case okAdmin
+  case okTimer
+  case alreadyUnlocked
+  case alreadyOpen
+  case permissionError
+  case signatureSyncError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKGetParametersResponse.RawValue)
+  public var rawValue: LKLib_Light.LKGetParametersResponse.RawValue {
+    get
+  }
+}
+public class LKGetParametersCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKGetParametersResponse, LKLib_Light.LKCommDevice?) -> Swift.Void
+  public var idParameters: [Swift.Int16]
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, idParameters: [Swift.Int16], messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKGetParametersResponse, LKLib_Light.LKCommDevice?) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKCommDeviceType : Swift.Int {
+  case single
+  case multiple
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum LKCommDeviceMode : Swift.UInt8 {
+  case normallyClosed
+  case normallyOpen
+  case latch
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum LKCommDeviceReaderMode : Swift.Int {
+  case noReader
+  case bigEndian
+  case littleEndian
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct LKCommDevice : Swift.Equatable {
+  public var id: Swift.Int
+  public let serial: LKLib_Light.LKSerial
+  public var name: Swift.String?
+  public var hasLogsToSync: Swift.Bool
+  public var kind: LKLib_Light.LKCommDeviceType
+  public var adminKey: Foundation.Data?
+  public var userKey: Foundation.Data?
+  public var latitude: Swift.Double
+  public var longitude: Swift.Double
+  public var mode: LKLib_Light.LKCommDeviceMode
+  public var unlockTime: Swift.Int
+  public var invertSensor: Swift.Bool
+  public var disableTouch: Swift.Bool
+  public var readerMode: LKLib_Light.LKCommDeviceReaderMode
+  public var isConfigured: Swift.Bool
+  public var scheduler: LKLib_Light.LKScheduler?
+  public var touchSense: Swift.Int16
+  public var batteryLevel: Swift.Int8
+  public var sound: Swift.Int8
+  public var timezone: LKLib_Light.LKTimezone?
+  public var timezoneDST: LKLib_Light.LKTimezone?
+  public var isInUpdateMode: Swift.Bool
+  public var hasTimeSettled: Swift.Bool
+  public var rssi: Swift.Int? {
+    get
+  }
+  public init(withSerial: Foundation.Data)
+  public static func == (lhs: LKLib_Light.LKCommDevice, rhs: LKLib_Light.LKCommDevice) -> Swift.Bool
+}
+public enum LKSetupTimeResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case messageHasWrongSize
+  case permissionError
+  case signatureSyncError
+  case checksumError
+  case generic
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKUnlockResponse.RawValue)
+  public var rawValue: LKLib_Light.LKSetupTimeResponse.RawValue {
+    get
+  }
+}
+public class LKSetupTimeCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimeResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimeResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKLogSyncResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKLogSyncResponse.RawValue)
+  public var rawValue: LKLib_Light.LKLogSyncResponse.RawValue {
+    get
+  }
+}
+public class LKLogSyncCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var logc: Swift.String
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKLogSyncResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, logc: Swift.String, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKLogSyncResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKResetResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case syncError
+  case messageHaveWrongSize
+  case notAuthorized
+  case signatureError
+  case checksumError
+  case notConfigured
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKResetResponse.RawValue)
+  public var rawValue: LKLib_Light.LKResetResponse.RawValue {
+    get
+  }
+}
+public class LKResetCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKResetResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKResetResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public protocol LKSecurityProtocol {
+  func signMessage(_ message: Foundation.Data, key: Foundation.Data, rollCount: Swift.UInt32) -> Foundation.Data
+  func cipherMessage(_ message: Foundation.Data, key: Foundation.Data) -> Foundation.Data
+  func decipherMessage(_ message: Foundation.Data, key: Foundation.Data) -> Foundation.Data
+  func decypherRollCount(_ type: LKLib_Light.LKCommandSource, with key: Foundation.Data, and data: Foundation.Data) throws -> Swift.UInt32
+  func cipherAndSign(src: Foundation.Data, message: Foundation.Data, key: Foundation.Data, rollCount: Swift.UInt32) -> Foundation.Data
+  func verifyMessage(commandResponse: Foundation.Data, with device: LKLib_Light.LKCommDevice, messageSource: LKLib_Light.LKCommandSource) -> Foundation.Data?
+}
+extension LKLib_Light.LKSecurityProtocol {
+  public func signMessage(_ message: Foundation.Data, key: Foundation.Data, rollCount: Swift.UInt32) -> Foundation.Data
+  public func cipherMessage(_ message: Foundation.Data, key: Foundation.Data) -> Foundation.Data
+  public func decipherMessage(_ message: Foundation.Data, key: Foundation.Data) -> Foundation.Data
+  public func decypherRollCount(_ type: LKLib_Light.LKCommandSource, with key: Foundation.Data, and data: Foundation.Data) throws -> Swift.UInt32
+  public func cipherAndSign(src: Foundation.Data, message: Foundation.Data, key: Foundation.Data, rollCount: Swift.UInt32) -> Foundation.Data
+  public func getHmac(from data: Foundation.Data) -> Foundation.Data
+  public func getMessageCipher(from data: Foundation.Data) -> Foundation.Data
+  public func verifySignMessage(device: LKLib_Light.LKCommDevice, messageSource: LKLib_Light.LKCommandSource, commandData: Foundation.Data) throws
+  public func checkCRC(commandData: Foundation.Data, device: LKLib_Light.LKCommDevice) -> Foundation.Data?
+  public func verifyMessage(commandResponse: Foundation.Data, with device: LKLib_Light.LKCommDevice, messageSource: LKLib_Light.LKCommandSource) -> Foundation.Data?
+}
+public enum LKOpenConfigureResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case messageHaveWrongSize
+  case notAuthorized
+  case checksumError
+  case alreadyConfigured
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKUnlockResponse.RawValue)
+  public var rawValue: LKLib_Light.LKOpenConfigureResponse.RawValue {
+    get
+  }
+}
+public class LKOpenConfigureCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKOpenConfigureResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKOpenConfigureResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LKBLEScanner {
+  public static let shared: LKLib_Light.LKBLEScanner
+  @objc deinit
+  public func getVisibleDevices(_ delegate: LKLib_Light.LKDiscoveryProtocol)
+  public func subscribeForNotifications(_ delegate: LKLib_Light.LKDiscoveryProtocol)
+  public func unsubscribeForNotifications(_ delegate: LKLib_Light.LKDiscoveryProtocol)
+}
+extension LKLib_Light.LKBLEScanner : LKLib_Light.LKBLEDiscoveryObserverProtocol {
+  public func discoveredDevice(_ peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], RSSI: Foundation.NSNumber)
+}
+extension LKLib_Light.LKBLEScanner : LKLib_Light.LKBLEStateObserverProtocol {
+  public func bleStateChanged(state: LKLib_Light.LKBLEState)
+}
+extension LKLib_Light.LKBLEScanner : LKLib_Light.LKBLEConnectionProtocol {
+  public func deviceDidConnect(_ peripheral: CoreBluetooth.CBPeripheral)
+  public func deviceDidDisconnect(_ peripheral: CoreBluetooth.CBPeripheral, withError: Swift.Error?)
+}
+public enum LKRemoveFingerPrintResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case messageHasWrongSize
+  case keyDelayed
+  case permissionError
+  case signatureSyncError
+  case checksumError
+  case notConfigured
+  case generic
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKSetupFingerPrintResponse.RawValue)
+  public var rawValue: LKLib_Light.LKRemoveFingerPrintResponse.RawValue {
+    get
+  }
+}
+public class LKRemoveFingerPrintCommand : LKLib_Light.LKCommandProtocol {
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandName: Swift.String
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, permissionId: Swift.UInt32, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKRemoveFingerPrintResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKValidateKeyResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case messageHaveWrongSize
+  case signatureError
+  case notAuthorized
+  case checksumError
+  case genericError
+  case unavailableOnline
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKValidateKeyResponse.RawValue)
+  public var rawValue: LKLib_Light.LKValidateKeyResponse.RawValue {
+    get
+  }
+}
+public class LKValidateKeyCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKValidateKeyResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKValidateKeyResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKSetupTimezoneResponse : Swift.Error, Swift.RawRepresentable, Swift.Equatable {
+  public typealias RawValue = Swift.String
+  case ok
+  case messageHasWrongSize
+  case permissionError
+  case signatureSyncError
+  case checksumError
+  case generic
+  case commonError(LKLib_Light.LKCommandResponse)
+  public init?(rawValue: LKLib_Light.LKUnlockResponse.RawValue)
+  public var rawValue: LKLib_Light.LKSetupTimezoneResponse.RawValue {
+    get
+  }
+}
+public class LKSetupTimezoneCommand : LKLib_Light.LKCommandProtocol {
+  public var commandName: Swift.String
+  public var device: LKLib_Light.LKCommDevice
+  public var user: LKLib_Light.LKCommUser
+  public var commandData: Foundation.Data
+  public var messageSource: LKLib_Light.LKCommandSource
+  public var commandHandler: (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimezoneResponse) -> Swift.Void
+  required public init(commDevice: LKLib_Light.LKCommDevice, user: LKLib_Light.LKCommUser, messageSource: LKLib_Light.LKCommandSource, commandHandler: @escaping (LKLib_Light.LKCommDevice, LKLib_Light.LKSetupTimezoneResponse) -> Swift.Void)
+  public func treatResponse(response: Swift.Result<Foundation.Data, LKLib_Light.LKPeripheralErrors>)
+  public func mount(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOnline(rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public func assembleOffline(key: Foundation.Data, rollCount: Foundation.Data, handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public enum LKServer {
+  case dev
+  case prod
+  case hml
+  case custom(Swift.String)
+}
+@_hasMissingDesignatedInitializers public class LKServerNetworking {
+  public static let shared: LKLib_Light.LKServerNetworking
+  @objc public var endpointURL: Swift.String {
+    @objc get
+  }
+  public func set(endpoint: LKLib_Light.LKServer)
+  public func set(authorization: Swift.String?)
+  @objc deinit
+}
+extension LKLib_Light.LKProductName : Swift.Equatable {}
+extension LKLib_Light.LKProductName : Swift.Hashable {}
+extension LKLib_Light.LKProductName : Swift.RawRepresentable {}
+extension LKLib_Light.LKCommandSource : Swift.Equatable {}
+extension LKLib_Light.LKCommandSource : Swift.Hashable {}
+extension LKLib_Light.LKCommandSource : Swift.RawRepresentable {}
+extension LKLib_Light.LKCommandResponse : Swift.Equatable {}
+extension LKLib_Light.LKCommandResponse : Swift.Hashable {}
+extension LKLib_Light.LKSetupFingerPrintMode : Swift.Equatable {}
+extension LKLib_Light.LKSetupFingerPrintMode : Swift.Hashable {}
+extension LKLib_Light.LKSetupFingerPrintMode : Swift.RawRepresentable {}
+extension LKLib_Light.LKSetupFingerPrintStatus : Swift.Equatable {}
+extension LKLib_Light.LKSetupFingerPrintStatus : Swift.Hashable {}
+extension LKLib_Light.LKSetupFingerPrintStatus : Swift.RawRepresentable {}
+extension LKLib_Light.LKBLEState : Swift.Equatable {}
+extension LKLib_Light.LKBLEState : Swift.Hashable {}
+extension LKLib_Light.LKPermissionFlags : Swift.Equatable {}
+extension LKLib_Light.LKPermissionFlags : Swift.Hashable {}
+extension LKLib_Light.LKPermissionFlags : Swift.RawRepresentable {}
+extension LKLib_Light.LKPermissionMode : Swift.Equatable {}
+extension LKLib_Light.LKPermissionMode : Swift.Hashable {}
+extension LKLib_Light.LKPermissionMode : Swift.RawRepresentable {}
+extension LKLib_Light.LKPeripheralErrors : Swift.Equatable {}
+extension LKLib_Light.LKPeripheralErrors : Swift.Hashable {}
+extension LKLib_Light.LKCommDeviceType : Swift.Equatable {}
+extension LKLib_Light.LKCommDeviceType : Swift.Hashable {}
+extension LKLib_Light.LKCommDeviceType : Swift.RawRepresentable {}
+extension LKLib_Light.LKCommDeviceMode : Swift.Equatable {}
+extension LKLib_Light.LKCommDeviceMode : Swift.Hashable {}
+extension LKLib_Light.LKCommDeviceMode : Swift.RawRepresentable {}
+extension LKLib_Light.LKCommDeviceReaderMode : Swift.Equatable {}
+extension LKLib_Light.LKCommDeviceReaderMode : Swift.Hashable {}
+extension LKLib_Light.LKCommDeviceReaderMode : Swift.RawRepresentable {}
