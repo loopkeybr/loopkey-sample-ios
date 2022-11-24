@@ -11,9 +11,7 @@ import LKLib_Light
 @main
 struct SampleiOSApp: App
 {
-    var unlockLk = UnlockLK()
-    
-    var body: some Scene {
+     var body: some Scene {
         WindowGroup {
             ContentView()
         }

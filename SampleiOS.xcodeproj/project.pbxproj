@@ -7,26 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD6EEAB7292EE405006122C4 /* TTLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6EEAB4292EE404006122C4 /* TTLock.framework */; };
+		DD6EEAB9292EE405006122C4 /* LKCrypto_iOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6EEAB5292EE404006122C4 /* LKCrypto_iOS.xcframework */; };
+		DD6EEABA292EE405006122C4 /* LKCrypto_iOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD6EEAB5292EE404006122C4 /* LKCrypto_iOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DD6EEABB292EE405006122C4 /* LKLib-Light.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6EEAB6292EE404006122C4 /* LKLib-Light.xcframework */; };
+		DD6EEABC292EE405006122C4 /* LKLib-Light.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD6EEAB6292EE404006122C4 /* LKLib-Light.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD754E182881AFF2003C324D /* SampleiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD754E082881AFF1003C324D /* SampleiOSApp.swift */; };
 		DD754E1A2881AFF2003C324D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD754E092881AFF1003C324D /* ContentView.swift */; };
 		DD754E1C2881AFF2003C324D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD754E0A2881AFF2003C324D /* Assets.xcassets */; };
-		DD754E282881B015003C324D /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD754E272881B015003C324D /* CoreBluetooth.framework */; };
-		DD754E2A2881B028003C324D /* LKLib-Light.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD754E292881B028003C324D /* LKLib-Light.xcframework */; };
-		DD754E2B2881B028003C324D /* LKLib-Light.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD754E292881B028003C324D /* LKLib-Light.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DD754E2E2881B03D003C324D /* LKCrypto_iOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD754E2D2881B03D003C324D /* LKCrypto_iOS.xcframework */; };
-		DD754E2F2881B03D003C324D /* LKCrypto_iOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD754E2D2881B03D003C324D /* LKCrypto_iOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DD754E3428857E75003C324D /* UnlockLK.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD754E3328857E75003C324D /* UnlockLK.swift */; };
+		DD754E3428857E75003C324D /* LKUnlockDeviceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD754E3328857E75003C324D /* LKUnlockDeviceInteractor.swift */; };
+		DDD7E172292E8C7E0026B599 /* LKScanDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E171292E8C7E0026B599 /* LKScanDevices.swift */; };
+		DDD7E174292E8E520026B599 /* LKScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E173292E8E520026B599 /* LKScanResult.swift */; };
+		DDD7E17D292E90B30026B599 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD7E17C292E90B20026B599 /* CoreBluetooth.framework */; };
+		DDD7E17F292E93EA0026B599 /* LKScannerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E17E292E93EA0026B599 /* LKScannerProtocol.swift */; };
+		DDD7E181292E9A0E0026B599 /* ContentViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E180292E9A0E0026B599 /* ContentViewPresenter.swift */; };
+		DDD7E184292EA46B0026B599 /* ReachableDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E183292EA46B0026B599 /* ReachableDeviceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DD754E2C2881B028003C324D /* Embed Frameworks */ = {
+		DD6EEABD292EE405006122C4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DD754E2B2881B028003C324D /* LKLib-Light.xcframework in Embed Frameworks */,
-				DD754E2F2881B03D003C324D /* LKCrypto_iOS.xcframework in Embed Frameworks */,
+				DD6EEABC292EE405006122C4 /* LKLib-Light.xcframework in Embed Frameworks */,
+				DD6EEABA292EE405006122C4 /* LKCrypto_iOS.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,15 +40,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD6EEAB4292EE404006122C4 /* TTLock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TTLock.framework; path = Frameworks/TTLock.framework; sourceTree = "<group>"; };
+		DD6EEAB5292EE404006122C4 /* LKCrypto_iOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LKCrypto_iOS.xcframework; path = Frameworks/LKCrypto_iOS.xcframework; sourceTree = "<group>"; };
+		DD6EEAB6292EE404006122C4 /* LKLib-Light.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "LKLib-Light.xcframework"; path = "Frameworks/LKLib-Light.xcframework"; sourceTree = "<group>"; };
 		DD754E082881AFF1003C324D /* SampleiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleiOSApp.swift; sourceTree = "<group>"; };
 		DD754E092881AFF1003C324D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD754E0A2881AFF2003C324D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD754E0F2881AFF2003C324D /* SampleiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD754E272881B015003C324D /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
-		DD754E292881B028003C324D /* LKLib-Light.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "LKLib-Light.xcframework"; path = "../lklib-ios/archives/LKLib-Light.xcframework"; sourceTree = "<group>"; };
-		DD754E2D2881B03D003C324D /* LKCrypto_iOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LKCrypto_iOS.xcframework; path = "../lklib-ios/Carthage/Build/LKCrypto_iOS.xcframework"; sourceTree = "<group>"; };
-		DD754E3328857E75003C324D /* UnlockLK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockLK.swift; sourceTree = "<group>"; };
+		DD754E3328857E75003C324D /* LKUnlockDeviceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LKUnlockDeviceInteractor.swift; sourceTree = "<group>"; };
 		DD754E352885838A003C324D /* SampleiOS--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SampleiOS--iOS--Info.plist"; sourceTree = "<group>"; };
+		DDD7E171292E8C7E0026B599 /* LKScanDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LKScanDevices.swift; sourceTree = "<group>"; };
+		DDD7E173292E8E520026B599 /* LKScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LKScanResult.swift; sourceTree = "<group>"; };
+		DDD7E17C292E90B20026B599 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.1.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
+		DDD7E17E292E93EA0026B599 /* LKScannerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LKScannerProtocol.swift; sourceTree = "<group>"; };
+		DDD7E180292E9A0E0026B599 /* ContentViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewPresenter.swift; sourceTree = "<group>"; };
+		DDD7E183292EA46B0026B599 /* ReachableDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachableDeviceView.swift; sourceTree = "<group>"; };
+		DDD7E1A7292EE10B0026B599 /* LKLib-Light.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "LKLib-Light.xcframework"; path = "../loopkey-sample-ios/Frameworks/LKLib-Light.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,15 +63,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD754E2E2881B03D003C324D /* LKCrypto_iOS.xcframework in Frameworks */,
-				DD754E282881B015003C324D /* CoreBluetooth.framework in Frameworks */,
-				DD754E2A2881B028003C324D /* LKLib-Light.xcframework in Frameworks */,
+				DD6EEAB9292EE405006122C4 /* LKCrypto_iOS.xcframework in Frameworks */,
+				DD6EEABB292EE405006122C4 /* LKLib-Light.xcframework in Frameworks */,
+				DDD7E17D292E90B30026B599 /* CoreBluetooth.framework in Frameworks */,
+				DD6EEAB7292EE405006122C4 /* TTLock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD6EEABE292F9BF9006122C4 /* LKFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DD754E3328857E75003C324D /* LKUnlockDeviceInteractor.swift */,
+				DDD7E171292E8C7E0026B599 /* LKScanDevices.swift */,
+				DDD7E173292E8E520026B599 /* LKScanResult.swift */,
+				DDD7E17E292E93EA0026B599 /* LKScannerProtocol.swift */,
+			);
+			path = LKFiles;
+			sourceTree = "<group>";
+		};
 		DD754E022881AFF1003C324D = {
 			isa = PBXGroup;
 			children = (
@@ -72,10 +97,10 @@
 		DD754E072881AFF1003C324D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DD6EEABE292F9BF9006122C4 /* LKFiles */,
+				DDD7E182292EA4400026B599 /* Views */,
 				DD754E082881AFF1003C324D /* SampleiOSApp.swift */,
-				DD754E092881AFF1003C324D /* ContentView.swift */,
 				DD754E0A2881AFF2003C324D /* Assets.xcassets */,
-				DD754E3328857E75003C324D /* UnlockLK.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -91,11 +116,23 @@
 		DD754E262881B014003C324D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD754E2D2881B03D003C324D /* LKCrypto_iOS.xcframework */,
-				DD754E292881B028003C324D /* LKLib-Light.xcframework */,
-				DD754E272881B015003C324D /* CoreBluetooth.framework */,
+				DD6EEAB5292EE404006122C4 /* LKCrypto_iOS.xcframework */,
+				DD6EEAB6292EE404006122C4 /* LKLib-Light.xcframework */,
+				DDD7E1A7292EE10B0026B599 /* LKLib-Light.xcframework */,
+				DD6EEAB4292EE404006122C4 /* TTLock.framework */,
+				DDD7E17C292E90B20026B599 /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDD7E182292EA4400026B599 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD754E092881AFF1003C324D /* ContentView.swift */,
+				DDD7E183292EA46B0026B599 /* ReachableDeviceView.swift */,
+				DDD7E180292E9A0E0026B599 /* ContentViewPresenter.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,7 +145,7 @@
 				DD754E0B2881AFF2003C324D /* Sources */,
 				DD754E0C2881AFF2003C324D /* Frameworks */,
 				DD754E0D2881AFF2003C324D /* Resources */,
-				DD754E2C2881B028003C324D /* Embed Frameworks */,
+				DD6EEABD292EE405006122C4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,10 +164,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					DD754E0E2881AFF2003C324D = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -168,9 +206,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD7E174292E8E520026B599 /* LKScanResult.swift in Sources */,
+				DDD7E181292E9A0E0026B599 /* ContentViewPresenter.swift in Sources */,
+				DDD7E172292E8C7E0026B599 /* LKScanDevices.swift in Sources */,
 				DD754E1A2881AFF2003C324D /* ContentView.swift in Sources */,
+				DDD7E17F292E93EA0026B599 /* LKScannerProtocol.swift in Sources */,
 				DD754E182881AFF2003C324D /* SampleiOSApp.swift in Sources */,
-				DD754E3428857E75003C324D /* UnlockLK.swift in Sources */,
+				DDD7E184292EA46B0026B599 /* ReachableDeviceView.swift in Sources */,
+				DD754E3428857E75003C324D /* LKUnlockDeviceInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +253,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -227,6 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,6 +313,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -279,6 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -291,10 +338,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 86MG9KVY7T;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SampleiOS--iOS--Info.plist";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = Teste;
@@ -304,16 +356,26 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-whyload",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.loopkey.SampleiOS;
 				PRODUCT_NAME = SampleiOS;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -324,10 +386,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 86MG9KVY7T;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SampleiOS--iOS--Info.plist";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = Teste;
@@ -337,16 +404,25 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-whyload",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.loopkey.SampleiOS;
 				PRODUCT_NAME = SampleiOS;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
